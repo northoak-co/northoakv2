@@ -59,7 +59,7 @@ const Header = () => {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <img src={logo} alt="NorthOak" className="h-7" />
+          <img src={logo} alt="NorthOak" className="h-7 w-auto object-contain" style={{ imageRendering: 'auto' }} />
         </motion.a>
 
         {/* Desktop Navigation */}
