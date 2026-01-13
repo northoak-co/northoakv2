@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
@@ -36,34 +34,22 @@ const Hero = () => {
             Quickly and seamlessly scale your team with agile, highly customizable solutions that power your growth.
           </motion.p>
 
-          {/* Email Input & CTA */}
+          {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="max-w-lg mx-auto mb-4"
+            className="flex justify-center mb-12"
           >
-            <div className="flex items-center bg-card border border-border rounded-full p-1.5 shadow-card">
-              <Input
-                type="email"
-                placeholder="What's your work email?"
-                className="flex-1 h-11 px-5 bg-transparent border-0 text-base placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0"
-              />
-              <Button variant="hero" size="lg" className="rounded-full px-6 whitespace-nowrap">
-                Get started for free
-              </Button>
-            </div>
+            <button className="group flex items-center bg-sage hover:bg-sage-dark transition-colors duration-200 rounded-full overflow-hidden">
+              <span className="px-6 py-3 text-white font-medium">
+                Speak With an Expert
+              </span>
+              <span className="flex items-center justify-center w-10 h-10 m-1.5 bg-white/20 rounded-full group-hover:bg-white/30 transition-colors duration-200">
+                <ArrowRight className="w-4 h-4 text-white" />
+              </span>
+            </button>
           </motion.div>
-          
-          {/* Consent Text */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-xs text-muted-foreground mb-12"
-          >
-            By submitting your email, you agree to opt in to marketing emails.
-          </motion.p>
 
         </div>
       </div>
