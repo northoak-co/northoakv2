@@ -54,14 +54,18 @@ const Header = () => {
       className="fixed top-4 left-4 right-4 z-50"
     >
       <motion.div 
-        className="max-w-7xl mx-auto rounded-2xl border border-border/50 px-6 h-14 flex items-center justify-between transition-all duration-300"
+        className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between transition-all duration-300"
         animate={{
-          backgroundColor: isScrolled ? "hsl(var(--card) / 0.98)" : "hsl(var(--card) / 0.85)",
+          backgroundColor: isScrolled ? "hsl(var(--card) / 0.98)" : "transparent",
           boxShadow: isScrolled 
             ? "0 8px 32px -8px hsl(102 44% 51% / 0.15), 0 4px 16px -4px hsl(0 0% 0% / 0.1)" 
-            : "0 2px 12px -2px hsl(150 10% 15% / 0.06)",
-          backdropFilter: isScrolled ? "blur(16px)" : "blur(8px)",
+            : "none",
+          backdropFilter: isScrolled ? "blur(16px)" : "none",
+          borderRadius: isScrolled ? "1rem" : "0",
+          borderColor: isScrolled ? "hsl(var(--border) / 0.5)" : "transparent",
+          borderWidth: isScrolled ? "1px" : "0px",
         }}
+        style={{ borderStyle: "solid" }}
         transition={{ duration: 0.3 }}
       >
         {/* Logo */}
