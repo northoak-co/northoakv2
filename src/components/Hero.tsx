@@ -4,13 +4,6 @@ import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
-  const services = [
-    { label: "CRM Management", delay: 0 },
-    { label: "Customer Support", delay: 0.1 },
-    { label: "HR Admin", delay: 0.2 },
-    { label: "Process Automation", delay: 0.3 },
-    { label: "Finance & Accounting", delay: 0.4 },
-  ];
 
   return (
     <section className="relative min-h-screen bg-gradient-hero pt-24 pb-16 overflow-hidden">
@@ -72,45 +65,6 @@ const Hero = () => {
             By submitting your email, you agree to opt in to marketing emails.
           </motion.p>
 
-          {/* Divider */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-full max-w-xl mx-auto h-px bg-border mb-12"
-          />
-
-          {/* Solutions Label */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="text-sm font-medium text-muted-foreground mb-8"
-          >
-            Which solutions are you looking for?
-          </motion.p>
-
-          {/* Service Pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-3"
-          >
-            {services.map((service, index) => (
-              <motion.button
-                key={service.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.6 + service.delay }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-5 py-2.5 bg-card border border-border rounded-full text-sm font-medium text-foreground hover:border-sage hover:bg-sage-light transition-all duration-200 shadow-card"
-              >
-                {service.label}
-              </motion.button>
-            ))}
-          </motion.div>
         </div>
       </div>
 
