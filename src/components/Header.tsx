@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,27 +23,8 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-sage rounded-lg flex items-center justify-center">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              className="w-5 h-5 text-primary-foreground"
-            >
-              <path
-                d="M12 3L4 9v12h16V9l-8-6z"
-                fill="currentColor"
-                opacity="0.3"
-              />
-              <path
-                d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-          <span className="font-display font-bold text-xl text-foreground">
-            northoak
-          </span>
+        <a href="#" className="flex items-center">
+          <img src={logo} alt="NorthOak" className="h-8" />
         </a>
 
         {/* Desktop Navigation */}
