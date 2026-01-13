@@ -48,7 +48,7 @@ const Hero = () => {
               </AnimatePresence>
             </span>
             <br />
-            <span className="text-foreground">talent</span>
+            <span className="text-foreground">offshore talent</span>
           </motion.h1>
 
           {/* Subheadline */}
