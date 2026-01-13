@@ -14,7 +14,7 @@ const Footer = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <img src={logo} alt="NorthOak" className="h-8 brightness-0 invert" />
+            <img src={logo} alt="NorthOak" className="h-8 w-auto object-contain brightness-0 invert" style={{ imageRendering: 'auto' }} />
           </motion.div>
 
           {/* Navigation */}
