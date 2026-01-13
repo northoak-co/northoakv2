@@ -48,18 +48,29 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-12"
+            className="max-w-lg mx-auto mb-4"
           >
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              className="h-12 px-5 bg-card border-border rounded-xl text-base"
-            />
-            <Button variant="hero" size="lg" className="gap-2 whitespace-nowrap">
-              Talk to an Expert
-              <ArrowRight className="w-4 h-4" />
-            </Button>
+            <div className="flex items-center bg-card border border-border rounded-full p-1.5 shadow-card">
+              <Input
+                type="email"
+                placeholder="What's your work email?"
+                className="flex-1 h-11 px-5 bg-transparent border-0 text-base placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0"
+              />
+              <Button variant="hero" size="lg" className="rounded-full px-6 whitespace-nowrap">
+                Get started for free
+              </Button>
+            </div>
           </motion.div>
+          
+          {/* Consent Text */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-xs text-muted-foreground mb-12"
+          >
+            By submitting your email, you agree to opt in to marketing emails.
+          </motion.p>
 
           {/* Divider */}
           <motion.div
