@@ -1,7 +1,17 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const rotatingWords = ["find", "embed", "scale with"];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative min-h-screen bg-gradient-hero pt-24 pb-16 overflow-hidden">
@@ -20,8 +30,24 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
           >
-            <span className="text-sage">Operations expertise</span>
-            <span className="text-foreground"> to unlock your team's potential</span>
+            <span className="text-foreground">Where top marketing teams</span>
+            <br />
+            <span className="inline-block min-w-[200px] md:min-w-[280px]">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={currentWordIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-sage italic inline-block"
+                >
+                  {rotatingWords[currentWordIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+            <br />
+            <span className="text-foreground">global talent</span>
           </motion.h1>
 
           {/* Subheadline */}
