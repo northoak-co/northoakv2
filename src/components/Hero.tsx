@@ -38,57 +38,17 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
           >
             Quickly and seamlessly scale your team with agile, highly customizable solutions that power your growth.
           </motion.p>
-
-          {/* Divider */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="w-full max-w-xl mx-auto h-px bg-border mb-12"
-          />
-
-          {/* Solutions Label */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-sm font-medium text-muted-foreground mb-8"
-          >
-            Which solutions are you looking for?
-          </motion.p>
-
-          {/* Service Pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-wrap justify-center gap-3 mb-12"
-          >
-            {services.map((service, index) => (
-              <motion.button
-                key={service.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.5 + service.delay }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-5 py-2.5 bg-card border border-border rounded-full text-sm font-medium text-foreground hover:border-sage hover:bg-sage-light transition-all duration-200 shadow-card"
-              >
-                {service.label}
-              </motion.button>
-            ))}
-          </motion.div>
 
           {/* Email Input & CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-12"
           >
             <Input
               type="email"
@@ -99,6 +59,46 @@ const Hero = () => {
               Talk to an Expert
               <ArrowRight className="w-4 h-4" />
             </Button>
+          </motion.div>
+
+          {/* Divider */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="w-full max-w-xl mx-auto h-px bg-border mb-12"
+          />
+
+          {/* Solutions Label */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="text-sm font-medium text-muted-foreground mb-8"
+          >
+            Which solutions are you looking for?
+          </motion.p>
+
+          {/* Service Pills */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex flex-wrap justify-center gap-3"
+          >
+            {services.map((service, index) => (
+              <motion.button
+                key={service.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.6 + service.delay }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-5 py-2.5 bg-card border border-border rounded-full text-sm font-medium text-foreground hover:border-sage hover:bg-sage-light transition-all duration-200 shadow-card"
+              >
+                {service.label}
+              </motion.button>
+            ))}
           </motion.div>
         </div>
       </div>
