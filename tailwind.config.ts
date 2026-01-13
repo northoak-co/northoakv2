@@ -20,7 +20,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Libre Baskerville", "Georgia", "serif"],
+        display: ["Crimson Pro", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
