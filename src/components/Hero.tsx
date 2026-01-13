@@ -45,8 +45,8 @@ const Hero = () => {
               <span className="px-6 py-3 text-white font-medium">
                 Speak With an Expert
               </span>
-              <span className="flex items-center justify-center w-10 h-10 m-1.5 bg-white/20 rounded-full group-hover:bg-white/30 transition-colors duration-200">
-                <ArrowRight className="w-4 h-4 text-white" />
+              <span className="flex items-center justify-center w-10 h-10 m-1.5 bg-white rounded-full">
+                <ArrowRight className="w-4 h-4 text-sage" />
               </span>
             </button>
           </motion.div>
