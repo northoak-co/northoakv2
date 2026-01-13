@@ -6,30 +6,17 @@ import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const currentScrollY = latest;
-    
-    // Show header when at top or scrolling up, hide when scrolling down
-    if (currentScrollY < 50) {
-      setIsVisible(true);
+    // Only track if scrolled for styling changes
+    if (latest < 50) {
       setIsScrolled(false);
     } else {
       setIsScrolled(true);
-      if (currentScrollY < lastScrollY) {
-        setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-        setIsMenuOpen(false);
-      }
     }
-    
-    setLastScrollY(currentScrollY);
   });
 
   const navLinks = [
@@ -42,11 +29,8 @@ const Header = () => {
 
   return (
     <motion.header
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ 
-        y: isVisible ? 0 : -100, 
-        opacity: isVisible ? 1 : 0 
-      }}
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ 
         duration: 0.3, 
         ease: [0.25, 0.1, 0.25, 1] 
