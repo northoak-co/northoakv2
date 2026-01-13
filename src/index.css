@@ -15,7 +15,7 @@
     --popover: 60 15% 98%;
     --popover-foreground: 150 10% 15%;
 
-    --primary: 117 50% 56%;
+    --primary: 120 18% 49%;
     --primary-foreground: 60 20% 98%;
 
     --secondary: 100 15% 92%;
@@ -24,7 +24,7 @@
     --muted: 80 10% 94%;
     --muted-foreground: 150 8% 45%;
 
-    --accent: 117 50% 56%;
+    --accent: 120 18% 49%;
     --accent-foreground: 60 20% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,24 +32,24 @@
 
     --border: 100 12% 88%;
     --input: 100 12% 88%;
-    --ring: 117 50% 56%;
+    --ring: 120 18% 49%;
 
     --radius: 0.75rem;
 
     /* Custom NorthOak tokens */
-    --sage: 117 50% 56%;
-    --sage-light: 117 45% 94%;
-    --sage-dark: 117 55% 40%;
+    --sage: 120 18% 49%;
+    --sage-light: 110 25% 94%;
+    --sage-dark: 125 20% 35%;
     --cream: 60 20% 97%;
     --cream-dark: 50 15% 92%;
-    --forest: 117 40% 20%;
+    --forest: 140 25% 20%;
 
-    --gradient-hero: linear-gradient(180deg, hsl(117 45% 94%) 0%, hsl(60 20% 97%) 100%);
-    --gradient-sage: linear-gradient(135deg, hsl(117 50% 56%) 0%, hsl(117 55% 45%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(110 25% 94%) 0%, hsl(60 20% 97%) 100%);
+    --gradient-sage: linear-gradient(135deg, hsl(120 18% 49%) 0%, hsl(125 20% 40%) 100%);
 
-    --shadow-soft: 0 4px 20px -4px hsl(117 50% 56% / 0.12);
+    --shadow-soft: 0 4px 20px -4px hsl(120 18% 49% / 0.12);
     --shadow-card: 0 2px 12px -2px hsl(150 10% 15% / 0.06);
-    --shadow-hover: 0 8px 30px -6px hsl(117 50% 56% / 0.18);
+    --shadow-hover: 0 8px 30px -6px hsl(120 18% 49% / 0.18);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -71,7 +71,7 @@
     --popover: 150 12% 12%;
     --popover-foreground: 60 15% 95%;
 
-    --primary: 117 50% 56%;
+    --primary: 120 25% 55%;
     --primary-foreground: 150 15% 8%;
 
     --secondary: 140 10% 18%;
@@ -80,7 +80,7 @@
     --muted: 140 8% 20%;
     --muted-foreground: 100 10% 60%;
 
-    --accent: 117 50% 56%;
+    --accent: 120 25% 55%;
     --accent-foreground: 150 15% 8%;
 
     --destructive: 0 62.8% 30.6%;
@@ -88,17 +88,17 @@
 
     --border: 140 10% 22%;
     --input: 140 10% 22%;
-    --ring: 117 50% 56%;
+    --ring: 120 25% 55%;
 
-    --sage: 117 50% 56%;
-    --sage-light: 117 30% 20%;
-    --sage-dark: 117 55% 45%;
+    --sage: 120 25% 55%;
+    --sage-light: 130 15% 20%;
+    --sage-dark: 125 30% 45%;
     --cream: 150 15% 8%;
     --cream-dark: 145 12% 14%;
-    --forest: 117 35% 75%;
+    --forest: 120 20% 75%;
 
     --gradient-hero: linear-gradient(180deg, hsl(140 15% 12%) 0%, hsl(150 15% 8%) 100%);
-    --gradient-sage: linear-gradient(135deg, hsl(117 50% 56%) 0%, hsl(117 55% 45%) 100%);
+    --gradient-sage: linear-gradient(135deg, hsl(120 25% 55%) 0%, hsl(125 30% 45%) 100%);
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;

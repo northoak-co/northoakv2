@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   const services = [
@@ -88,19 +88,16 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex items-center max-w-lg mx-auto bg-forest rounded-full p-1.5 pl-6 shadow-lg"
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
           >
             <Input
               type="email"
-              placeholder="What's your work email?"
-              className="flex-1 h-12 bg-transparent border-0 text-primary-foreground placeholder:text-primary-foreground/60 text-base focus-visible:ring-0 focus-visible:ring-offset-0"
+              placeholder="Enter your email"
+              className="h-12 px-5 bg-card border-border rounded-xl text-base"
             />
-            <Button 
-              variant="default" 
-              size="lg" 
-              className="h-12 px-6 bg-[#d4e94c] hover:bg-[#c5da3d] text-forest font-semibold rounded-full whitespace-nowrap shadow-none"
-            >
-              Get started for free
+            <Button variant="hero" size="lg" className="gap-2 whitespace-nowrap">
+              Talk to an Expert
+              <ArrowRight className="w-4 h-4" />
             </Button>
           </motion.div>
         </div>
