@@ -73,9 +73,10 @@ const Header = () => {
         {/* Logo - animates from just outside nav to left edge */}
         <motion.a 
           href="#" 
-          className="flex items-center absolute left-6"
+          className="flex items-center absolute"
+          style={{ left: "1.5rem" }}
           animate={{
-            x: isScrolled ? 0 : `calc(50vw - ${centerOffset}px - 1.5rem - 100%)`,
+            x: isScrolled ? 0 : `calc(50vw - ${centerOffset + 24}px - 3rem)`,
           }}
           transition={{ 
             duration: 0.5, 
@@ -109,12 +110,13 @@ const Header = () => {
 
         {/* CTA Button - animates from just outside nav to right edge */}
         <motion.div 
-          className="hidden lg:block absolute right-6"
+          className="hidden lg:block absolute"
+          style={{ right: "1.5rem" }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ 
             opacity: 1, 
             scale: 1,
-            x: isScrolled ? 0 : `calc(-50vw + ${centerOffset}px + 1.5rem + 100%)`,
+            x: isScrolled ? 0 : `calc(-50vw + ${centerOffset + 24}px + 3rem)`,
           }}
           transition={{ 
             duration: 0.5, 
