@@ -23,7 +23,7 @@ const Header = () => {
   }, []);
 
   // Calculate offset: half nav width + gap for spacing outside nav
-  const centerOffset = navWidth / 2 + 69;
+  const centerOffset = navWidth / 2 + 100;
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
