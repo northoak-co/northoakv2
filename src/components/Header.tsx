@@ -1,38 +1,16 @@
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [navWidth, setNavWidth] = useState(400);
-  const navRef = useRef<HTMLElement>(null);
-
-  // Measure nav width for dynamic logo/button positioning
-  useEffect(() => {
-    const updateNavWidth = () => {
-      if (navRef.current) {
-        setNavWidth(navRef.current.offsetWidth);
-      }
-    };
-    updateNavWidth();
-    window.addEventListener("resize", updateNavWidth);
-    return () => window.removeEventListener("resize", updateNavWidth);
-  }, []);
-
-  // Calculate offset: half nav width + gap for spacing outside nav
-  const centerOffset = navWidth / 2 + 100;
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    // Only track if scrolled for styling changes
-    if (latest < 50) {
-      setIsScrolled(false);
-    } else {
-      setIsScrolled(true);
-    }
+    setIsScrolled(latest >= 50);
   });
 
   const navLinks = [
@@ -70,17 +48,16 @@ const Header = () => {
         }}
         transition={{ duration: 0.3 }}
       >
-        {/* Logo - animates from just outside nav to left edge */}
+        {/* Logo - animates from center-left to far left edge */}
         <motion.a
           href="#"
-          className="flex items-center absolute"
+          className="flex items-center absolute left-6"
           animate={{
-            left: isScrolled ? "1.5rem" : `calc(50% - ${centerOffset}px)`,
-            x: isScrolled ? 0 : "-100%",
+            x: isScrolled ? 0 : "calc(50vw - 50% - 280px)",
           }}
           transition={{
-            duration: 0.5,
-            ease: [0.4, 0, 0.2, 1],
+            duration: 0.4,
+            ease: [0.25, 0.1, 0.25, 1],
           }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -89,7 +66,7 @@ const Header = () => {
         </motion.a>
 
         {/* Desktop Navigation - stays centered */}
-        <nav ref={navRef} className="hidden lg:flex items-center gap-1 mx-auto">
+        <nav className="hidden lg:flex items-center gap-1 mx-auto">
           {navLinks.map((link, index) => (
             <motion.a
               key={link.label}
@@ -106,19 +83,18 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* CTA Button - animates from just outside nav to right edge */}
+        {/* CTA Button - animates from center-right to far right edge */}
         <motion.div
-          className="hidden lg:block absolute"
+          className="hidden lg:block absolute right-6"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{
             opacity: 1,
             scale: 1,
-            right: isScrolled ? "1.5rem" : `calc(50% - ${centerOffset}px)`,
-            x: isScrolled ? 0 : "100%",
+            x: isScrolled ? 0 : "calc(-50vw + 50% + 280px)",
           }}
           transition={{
-            duration: 0.5,
-            ease: [0.4, 0, 0.2, 1],
+            duration: 0.4,
+            ease: [0.25, 0.1, 0.25, 1],
           }}
         >
           <Button
