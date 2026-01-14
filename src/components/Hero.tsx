@@ -209,7 +209,7 @@ const Hero = () => {
               {/* Logo carousel container */}
               <div className="relative flex-1 w-full min-w-0 overflow-hidden">
                 {/* Gradient masks for fade effect */}
-                <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: "linear-gradient(to right, hsl(102 35% 92%) 0%, hsl(102 35% 92%) 20%, transparent 100%)" }} />
+                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[hsl(102_35%_92%)] to-transparent z-10 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[hsl(102_35%_92%)] to-transparent z-10 pointer-events-none" />
 
                 {/* Scrolling logos */}
