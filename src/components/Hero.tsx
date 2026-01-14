@@ -266,7 +266,7 @@ const Hero = () => {
                       x: {
                         repeat: Infinity,
                         repeatType: "loop",
-                        duration: 40,
+                        duration: 80,
                         ease: "linear",
                       },
                     }}
