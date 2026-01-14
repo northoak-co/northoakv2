@@ -38,7 +38,7 @@ const Hero = () => {
           >
             <span className="text-foreground">Time is money.</span>
             <br />
-            <span className="text-foreground">Save both with our</span>
+            <span className="text-foreground">Save both by offshoring your</span>
             <br />
             <span className="inline-block min-w-[280px] md:min-w-[380px]">
               <AnimatePresence mode="wait">
@@ -54,8 +54,6 @@ const Hero = () => {
                 </motion.span>
               </AnimatePresence>
             </span>
-            <br />
-            <span className="text-foreground">offshore talent</span>
           </motion.h1>
 
           {/* Subheadline */}
