@@ -241,7 +241,7 @@ const Hero = () => {
                             className="h-full w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
                           />
                         ) : (
-                          <div className="h-8 md:h-10 px-6 flex items-center justify-center bg-sage/10 rounded-lg border border-sage/20">
+                          <div className="h-8 md:h-10 px-6 flex items-center justify-center bg-white/50 rounded-lg border border-sage/20">
                             <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
                               {logo.name}
                             </span>
