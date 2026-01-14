@@ -10,8 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Link } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import Header from "@/components/Header";
 
 const GetStarted = () => {
   const benefits = [
@@ -83,11 +82,7 @@ const GetStarted = () => {
       </div>
 
       {/* Header */}
-      <header className="relative z-10 px-6 md:px-12 py-6">
-        <Link to="/" className="inline-block">
-          <img src={logo} alt="NorthOak" className="h-7 w-auto object-contain" />
-        </Link>
-      </header>
+      <Header />
 
       {/* Main content */}
       <main className="relative z-10 px-6 md:px-12 lg:px-20 py-12 md:py-20">
