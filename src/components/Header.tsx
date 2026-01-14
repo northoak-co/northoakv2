@@ -38,7 +38,11 @@ const Header = () => {
       className="fixed top-8 left-0 right-0 z-50 container mx-auto px-4 md:px-6"
     >
       <motion.div 
-        className="max-w-7xl mx-auto h-14 flex items-center justify-between transition-all duration-300"
+        className="mx-auto h-14 flex items-center justify-between transition-all duration-300"
+        style={{ 
+          maxWidth: "calc(100% - 2rem)",
+          borderStyle: "solid" 
+        }}
         animate={{
           backgroundColor: isScrolled ? "hsl(var(--card) / 0.98)" : "transparent",
           boxShadow: isScrolled 
@@ -48,10 +52,9 @@ const Header = () => {
           borderRadius: isScrolled ? "1rem" : "0",
           borderColor: isScrolled ? "hsl(var(--border) / 0.5)" : "transparent",
           borderWidth: isScrolled ? "1px" : "0px",
-          paddingLeft: isScrolled ? "1.5rem" : "4rem",
-          paddingRight: isScrolled ? "1.5rem" : "4rem",
+          paddingLeft: isScrolled ? "1.5rem" : "1rem",
+          paddingRight: isScrolled ? "1.5rem" : "1rem",
         }}
-        style={{ borderStyle: "solid" }}
         transition={{ duration: 0.3 }}
       >
         {/* Logo */}
