@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import decorativeLeaves from "@/assets/decorative-leaves.png";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
@@ -22,6 +23,20 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center pt-16 md:pt-24">
+          {/* Decorative Leaves */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center mb-8"
+          >
+            <img 
+              src={decorativeLeaves} 
+              alt="Decorative leaves" 
+              className="w-48 md:w-64 h-auto"
+            />
+          </motion.div>
+
           {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
