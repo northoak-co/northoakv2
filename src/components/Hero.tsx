@@ -258,6 +258,7 @@ const Hero = () => {
                 {/* Scrolling logos */}
                 <div className="flex w-max">
                   <motion.div
+                    key="logo-carousel"
                     className="flex items-center gap-6 md:gap-8"
                     animate={{
                       x: ["0%", "-50%"],
@@ -266,7 +267,7 @@ const Hero = () => {
                       x: {
                         repeat: Infinity,
                         repeatType: "loop",
-                        duration: 80,
+                        duration: 60,
                         ease: "linear",
                       },
                     }}
