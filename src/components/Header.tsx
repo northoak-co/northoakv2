@@ -50,21 +50,22 @@ const Header = () => {
         transition={{ duration: 0.3 }}
       >
         {/* Logo - animates from center-left to far left edge */}
-        <motion.a
-          href="#"
-          className="flex items-center absolute left-6"
-          animate={{
-            x: isScrolled ? 0 : "calc(50vw - 50% - 580px)",
-          }}
-          transition={{
-            duration: 0.4,
-            ease: [0.25, 0.1, 0.25, 1],
-          }}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          <img src={logo} alt="NorthOak" className="h-7 w-auto object-contain" style={{ imageRendering: "auto" }} />
-        </motion.a>
+        <Link to="/" className="absolute left-6">
+          <motion.div
+            className="flex items-center"
+            animate={{
+              x: isScrolled ? 0 : "calc(50vw - 50% - 580px)",
+            }}
+            transition={{
+              duration: 0.4,
+              ease: [0.25, 0.1, 0.25, 1],
+            }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <img src={logo} alt="NorthOak" className="h-7 w-auto object-contain" style={{ imageRendering: "auto" }} />
+          </motion.div>
+        </Link>
 
         {/* Desktop Navigation - stays centered */}
         <nav className="hidden lg:flex items-center gap-1 mx-auto">
