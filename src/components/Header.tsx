@@ -53,7 +53,7 @@ const Header = () => {
           href="#"
           className="flex items-center absolute left-6"
           animate={{
-            x: isScrolled ? 0 : "calc(50vw - 50% - 280px)",
+            x: isScrolled ? 0 : "calc(50vw - 50% - 380px)",
           }}
           transition={{
             duration: 0.4,
@@ -90,7 +90,7 @@ const Header = () => {
           animate={{
             opacity: 1,
             scale: 1,
-            x: isScrolled ? 0 : "calc(-50vw + 50% + 280px)",
+            x: isScrolled ? 0 : "calc(-50vw + 50% + 380px)",
           }}
           transition={{
             duration: 0.4,
