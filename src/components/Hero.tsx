@@ -67,9 +67,9 @@ const Hero = () => {
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Large primary orb - top right */}
             <motion.div 
-              className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full blur-3xl"
+              className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full blur-3xl"
               style={{
-                background: "radial-gradient(circle, hsl(102 44% 51% / 0.15) 0%, transparent 70%)",
+                background: "radial-gradient(circle, hsl(102 44% 51% / 0.3) 0%, transparent 70%)",
                 x: orb1X,
                 y: orb1Y,
               }}
@@ -77,9 +77,9 @@ const Hero = () => {
             
             {/* Secondary orb - bottom left */}
             <motion.div 
-              className="absolute -bottom-32 -left-20 w-[500px] h-[500px] rounded-full blur-3xl"
+              className="absolute -bottom-48 -left-32 w-[700px] h-[700px] rounded-full blur-3xl"
               style={{
-                background: "radial-gradient(circle, hsl(102 40% 55% / 0.12) 0%, transparent 70%)",
+                background: "radial-gradient(circle, hsl(102 40% 55% / 0.25) 0%, transparent 70%)",
                 x: orb2X,
                 y: orb2Y,
               }}
@@ -87,9 +87,9 @@ const Hero = () => {
             
             {/* Center accent orb */}
             <motion.div 
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-3xl"
               style={{
-                background: "radial-gradient(circle, hsl(102 35% 60% / 0.08) 0%, transparent 60%)",
+                background: "radial-gradient(circle, hsl(102 35% 60% / 0.18) 0%, transparent 60%)",
                 x: orb3X,
                 y: orb3Y,
               }}
@@ -97,17 +97,17 @@ const Hero = () => {
             
             {/* Subtle floating particles */}
             <motion.div 
-              className="absolute top-1/4 right-1/4 w-32 h-32 rounded-full blur-2xl"
+              className="absolute top-1/4 right-1/4 w-48 h-48 rounded-full blur-2xl"
               style={{
-                background: "hsl(102 44% 51% / 0.1)",
+                background: "hsl(102 44% 51% / 0.2)",
                 x: useTransform(smoothMouseX, [0, 1], [10, -10]),
                 y: useTransform(smoothMouseY, [0, 1], [15, -15]),
               }}
             />
             <motion.div 
-              className="absolute bottom-1/3 left-1/3 w-24 h-24 rounded-full blur-2xl"
+              className="absolute bottom-1/3 left-1/3 w-40 h-40 rounded-full blur-2xl"
               style={{
-                background: "hsl(102 44% 51% / 0.08)",
+                background: "hsl(102 44% 51% / 0.15)",
                 x: useTransform(smoothMouseX, [0, 1], [-8, 8]),
                 y: useTransform(smoothMouseY, [0, 1], [-12, 12]),
               }}
