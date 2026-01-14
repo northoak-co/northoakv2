@@ -60,6 +60,10 @@ const Header = () => {
           className="flex items-center"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
+          animate={{
+            x: isScrolled ? 0 : -24,
+          }}
+          transition={{ duration: 0.3 }}
         >
           <img src={logo} alt="NorthOak" className="h-7 w-auto object-contain" style={{ imageRendering: 'auto' }} />
         </motion.a>
@@ -88,7 +92,7 @@ const Header = () => {
         <motion.div 
           className="hidden lg:block"
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 1, scale: 1, x: isScrolled ? 0 : 24 }}
           transition={{ delay: 0.4, duration: 0.3 }}
         >
           <Button 
