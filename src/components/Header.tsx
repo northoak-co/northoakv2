@@ -38,7 +38,7 @@ const Header = () => {
       className="fixed top-8 left-4 right-4 z-50"
     >
       <motion.div 
-        className="max-w-7xl mx-auto h-14 flex items-center justify-between transition-all duration-300"
+        className="max-w-5xl mx-auto h-14 flex items-center justify-between transition-all duration-300"
         animate={{
           backgroundColor: isScrolled ? "hsl(var(--card) / 0.98)" : "transparent",
           boxShadow: isScrolled 
