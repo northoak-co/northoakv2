@@ -9,6 +9,11 @@ import novatioLogo from "@/assets/logos/novatio.png";
 import italistLogo from "@/assets/logos/italist.png";
 import bonsaiLogo from "@/assets/logos/bonsai.png";
 import dozrLogo from "@/assets/logos/dozr.png";
+import stylightLogo from "@/assets/logos/stylight.png";
+import mybestbrandsLogo from "@/assets/logos/mybestbrands.png";
+import verishopLogo from "@/assets/logos/verishop.png";
+import egoLogo from "@/assets/logos/ego.png";
+import hewiLogo from "@/assets/logos/hewi.png";
 
 const logos = [
   { name: "Unbound Academy", src: unboundAcademyLogo },
@@ -17,6 +22,11 @@ const logos = [
   { name: "Italist", src: italistLogo },
   { name: "Bonsai", src: bonsaiLogo },
   { name: "DOZR", src: dozrLogo },
+  { name: "Stylight", src: stylightLogo },
+  { name: "MyBestBrands", src: mybestbrandsLogo },
+  { name: "Verishop", src: verishopLogo },
+  { name: "EGO", src: egoLogo },
+  { name: "Hewi", src: hewiLogo },
   // Duplicates for seamless loop
   { name: "Unbound Academy", src: unboundAcademyLogo },
   { name: "Prequel", src: prequelLogo },
@@ -24,6 +34,11 @@ const logos = [
   { name: "Italist", src: italistLogo },
   { name: "Bonsai", src: bonsaiLogo },
   { name: "DOZR", src: dozrLogo },
+  { name: "Stylight", src: stylightLogo },
+  { name: "MyBestBrands", src: mybestbrandsLogo },
+  { name: "Verishop", src: verishopLogo },
+  { name: "EGO", src: egoLogo },
+  { name: "Hewi", src: hewiLogo },
 ];
 
 const Hero = () => {
