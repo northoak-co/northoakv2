@@ -49,8 +49,8 @@ const Header = () => {
           borderRadius: isScrolled ? "1rem" : "0",
           borderColor: isScrolled ? "hsl(var(--border) / 0.5)" : "transparent",
           borderWidth: isScrolled ? "1px" : "0px",
-          paddingLeft: isScrolled ? "1.5rem" : "10rem",
-          paddingRight: isScrolled ? "1.5rem" : "10rem",
+          paddingLeft: isScrolled ? "1.5rem" : "18rem",
+          paddingRight: isScrolled ? "1.5rem" : "18rem",
         }}
         transition={{ duration: 0.3 }}
       >
