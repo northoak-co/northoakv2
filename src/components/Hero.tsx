@@ -6,21 +6,24 @@ import { useState, useEffect, useRef } from "react";
 import unboundAcademyLogo from "@/assets/logos/unbound-academy.png";
 import prequelLogo from "@/assets/logos/prequel.png";
 import novatioLogo from "@/assets/logos/novatio.png";
+import italistLogo from "@/assets/logos/italist.png";
+import bonsaiLogo from "@/assets/logos/bonsai.png";
+import dozrLogo from "@/assets/logos/dozr.png";
 
 const logos = [
   { name: "Unbound Academy", src: unboundAcademyLogo },
   { name: "Prequel", src: prequelLogo },
   { name: "Novatio", src: novatioLogo },
-  { name: "Company 4", src: "" },
-  { name: "Company 5", src: "" },
-  { name: "Company 6", src: "" },
+  { name: "Italist", src: italistLogo },
+  { name: "Bonsai", src: bonsaiLogo },
+  { name: "DOZR", src: dozrLogo },
   // Duplicates for seamless loop
   { name: "Unbound Academy", src: unboundAcademyLogo },
   { name: "Prequel", src: prequelLogo },
   { name: "Novatio", src: novatioLogo },
-  { name: "Company 4", src: "" },
-  { name: "Company 5", src: "" },
-  { name: "Company 6", src: "" },
+  { name: "Italist", src: italistLogo },
+  { name: "Bonsai", src: bonsaiLogo },
+  { name: "DOZR", src: dozrLogo },
 ];
 
 const Hero = () => {
