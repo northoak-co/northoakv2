@@ -2,15 +2,18 @@ import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
-// Placeholder logos - replace with your actual imported logos
+// Import logos
+import unboundAcademyLogo from "@/assets/logos/unbound-academy.png";
+
 const logos = [
-  { name: "Company 1", src: "" },
+  { name: "Unbound Academy", src: unboundAcademyLogo },
   { name: "Company 2", src: "" },
   { name: "Company 3", src: "" },
   { name: "Company 4", src: "" },
   { name: "Company 5", src: "" },
   { name: "Company 6", src: "" },
-  { name: "Company 1", src: "" },
+  // Duplicates for seamless loop
+  { name: "Unbound Academy", src: unboundAcademyLogo },
   { name: "Company 2", src: "" },
   { name: "Company 3", src: "" },
   { name: "Company 4", src: "" },
