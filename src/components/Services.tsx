@@ -7,6 +7,7 @@ import {
   PiggyBank, 
   FileText 
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const services = [
@@ -14,31 +15,37 @@ const services = [
     icon: Users,
     title: "CRM Management",
     description: "Keep your customer information up-to-date and manage ongoing sales/marketing workflows.",
+    href: "/roles/crm-management",
   },
   {
     icon: HeadphonesIcon,
     title: "Customer Support",
     description: "Provide excellent service over email, chat, and phone at every step in the customer journey.",
+    href: "/roles/customer-support",
   },
   {
     icon: ClipboardList,
     title: "HR Admin",
     description: "Streamline your HR workflows with expert payroll, recruitment, and IT services.",
+    href: "/roles/hr-admin",
   },
   {
     icon: Cog,
     title: "Virtual Assistant",
     description: "Supercharge your daily to-dos, scheduling, inbox review, follow ups, and much more.",
+    href: "/roles/virtual-assistant",
   },
   {
     icon: PiggyBank,
     title: "Finance & Accounting",
     description: "Feel confident in your financial operations with expert bookkeeping and accounting services.",
+    href: "/roles/finance-accounting",
   },
   {
     icon: FileText,
     title: "Back Office Admin",
     description: "Have other manual workflows and processes unique to your business? We'll do it for you!",
+    href: "/roles/back-office-admin",
   },
 ];
 
@@ -88,25 +95,26 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="group p-6 bg-card rounded-2xl border border-border hover:border-sage/50 hover:shadow-hover transition-all duration-300"
-            >
-              <div className="w-12 h-12 bg-sage-light rounded-xl flex items-center justify-center mb-5 group-hover:bg-sage transition-colors duration-300">
-                <service.icon className="w-6 h-6 text-sage group-hover:text-primary-foreground transition-colors duration-300" />
-              </div>
-              <h3 className="font-sans text-lg font-semibold text-foreground mb-2">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {service.description}
-              </p>
-            </motion.div>
+            <Link key={service.title} to={service.href}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="group p-6 bg-card rounded-2xl border border-border hover:border-sage/50 hover:shadow-hover transition-all duration-300 h-full cursor-pointer"
+              >
+                <div className="w-12 h-12 bg-sage-light rounded-xl flex items-center justify-center mb-5 group-hover:bg-sage transition-colors duration-300">
+                  <service.icon className="w-6 h-6 text-sage group-hover:text-primary-foreground transition-colors duration-300" />
+                </div>
+                <h3 className="font-sans text-lg font-semibold text-foreground mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {service.description}
+                </p>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
