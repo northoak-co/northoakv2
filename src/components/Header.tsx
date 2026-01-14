@@ -23,7 +23,7 @@ const Header = () => {
   }, []);
 
   // Calculate offset: half nav width + gap for spacing outside nav
-  const centerOffset = (navWidth / 2) + 24;
+  const centerOffset = (navWidth / 2) + 16;
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -74,9 +74,9 @@ const Header = () => {
         <motion.a 
           href="#" 
           className="flex items-center absolute"
-          style={{ left: "1.5rem" }}
           animate={{
-            x: isScrolled ? 0 : `calc(50vw - ${centerOffset + 24}px - 3rem)`,
+            left: isScrolled ? "1.5rem" : `calc(50% - ${centerOffset}px)`,
+            x: isScrolled ? 0 : "-100%",
           }}
           transition={{ 
             duration: 0.5, 
@@ -111,12 +111,12 @@ const Header = () => {
         {/* CTA Button - animates from just outside nav to right edge */}
         <motion.div 
           className="hidden lg:block absolute"
-          style={{ right: "1.5rem" }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ 
             opacity: 1, 
             scale: 1,
-            x: isScrolled ? 0 : `calc(-50vw + ${centerOffset + 24}px + 3rem)`,
+            right: isScrolled ? "1.5rem" : `calc(50% - ${centerOffset}px)`,
+            x: isScrolled ? 0 : "100%",
           }}
           transition={{ 
             duration: 0.5, 
