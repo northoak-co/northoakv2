@@ -39,48 +39,50 @@ const SocialProof = () => {
           </motion.div>
 
           {/* Logo carousel container */}
-          <div className="relative flex-1 w-full overflow-hidden">
+          <div className="relative flex-1 w-full min-w-0 overflow-hidden">
             {/* Gradient masks for fade effect */}
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
             {/* Scrolling logos */}
-            <motion.div
-              className="flex items-center gap-12 md:gap-16"
-              animate={{
-                x: [0, "-50%"],
-              }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 20,
-                  ease: "linear",
-                },
-              }}
-            >
-              {duplicatedLogos.map((logo, index) => (
-                <div
-                  key={`${logo.name}-${index}`}
-                  className="flex items-center justify-center shrink-0 h-10 md:h-12 px-4"
-                >
-                  {logo.src ? (
-                    <img
-                      src={logo.src}
-                      alt={logo.name}
-                      className="h-full w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-                    />
-                  ) : (
-                    // Placeholder for logos - shows company name
-                    <div className="h-8 md:h-10 px-6 flex items-center justify-center bg-muted/50 rounded-lg border border-border/50">
-                      <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
-                        {logo.name}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </motion.div>
+            <div className="flex w-max">
+              <motion.div
+                className="flex items-center gap-12 md:gap-16"
+                animate={{
+                  x: ["0%", "-50%"],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 20,
+                    ease: "linear",
+                  },
+                }}
+              >
+                {duplicatedLogos.map((logo, index) => (
+                  <div
+                    key={`${logo.name}-${index}`}
+                    className="flex items-center justify-center shrink-0 h-10 md:h-12"
+                  >
+                    {logo.src ? (
+                      <img
+                        src={logo.src}
+                        alt={logo.name}
+                        className="h-full w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                      />
+                    ) : (
+                      // Placeholder for logos - shows company name
+                      <div className="h-8 md:h-10 px-6 flex items-center justify-center bg-muted/50 rounded-lg border border-border/50">
+                        <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
+                          {logo.name}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
