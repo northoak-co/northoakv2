@@ -35,7 +35,7 @@ const Header = () => {
         duration: 0.3, 
         ease: [0.25, 0.1, 0.25, 1] 
       }}
-      className="fixed top-8 left-4 right-4 z-50"
+      className="fixed top-8 left-0 right-0 z-50 container mx-auto px-4 md:px-6"
     >
       <motion.div 
         className="max-w-7xl mx-auto h-14 flex items-center justify-between transition-all duration-300"
