@@ -35,7 +35,7 @@ const Header = () => {
         duration: 0.3, 
         ease: [0.25, 0.1, 0.25, 1] 
       }}
-      className="fixed top-8 left-0 right-0 z-50 px-5 md:px-6"
+      className="fixed top-8 left-0 right-0 z-50 px-6 md:px-7"
     >
       <motion.div 
         className="mx-auto h-16 flex items-center justify-between transition-all duration-300"
