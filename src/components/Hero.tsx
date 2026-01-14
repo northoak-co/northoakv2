@@ -311,7 +311,7 @@ const Hero = () => {
           </div>
 
           {/* Divider */}
-          <div className="relative z-10 px-6 md:px-12 lg:px-20 py-6">
+          <div className="relative z-10 px-6 md:px-12 lg:px-20 py-6 pt-0">
             <div className="max-w-md mx-auto h-px bg-gradient-to-r from-transparent via-muted-foreground/30 to-transparent" />
           </div>
 
