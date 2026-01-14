@@ -111,7 +111,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-background pt-4 pb-16 overflow-hidden">
+    <section className="relative min-h-[130vh] bg-background pt-4 pb-16 overflow-hidden">
       {/* Soft Hero Box */}
       <div className="mx-auto px-3 md:px-4 relative z-10">
         <motion.div 
