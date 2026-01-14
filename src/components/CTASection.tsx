@@ -89,13 +89,12 @@ const CTASection = () => {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   className="flex items-center justify-center lg:justify-start gap-3 mb-8"
                 >
-                  <span className="inline-flex items-center px-4 py-2 bg-sage text-white text-sm font-medium rounded-full">
+                  <span className="px-5 py-2.5 bg-sage-light text-foreground font-medium text-sm rounded-full border border-sage/30">
                     Your Team
                   </span>
-                  <span className="text-muted-foreground text-lg">+</span>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-border text-foreground text-sm font-medium rounded-full shadow-sm">
-                    <img src={logoImg} alt="NorthOak" className="w-5 h-5 object-contain" />
-                    NorthOak
+                  <span className="text-muted-foreground font-medium">+</span>
+                  <span className="px-4 py-2 bg-white rounded-full border border-border flex items-center shadow-sm">
+                    <img src={logoImg} alt="NorthOak" className="h-5 w-auto" />
                   </span>
                 </motion.div>
 
