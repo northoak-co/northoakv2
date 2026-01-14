@@ -32,7 +32,7 @@ const Header = () => {
       className="fixed top-8 left-0 right-0 z-50 px-9 md:px-10"
     >
       <motion.div
-        className="mx-auto h-16 flex items-center transition-all duration-300 relative"
+        className="mx-auto h-[4.5rem] flex items-center transition-all duration-300 relative"
         style={{ borderStyle: "solid" }}
         animate={{
           backgroundColor: isScrolled ? "hsl(var(--card) / 0.98)" : "transparent",
