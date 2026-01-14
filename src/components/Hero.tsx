@@ -310,6 +310,11 @@ const Hero = () => {
             </div>
           </div>
 
+          {/* Divider */}
+          <div className="relative z-10 px-6 md:px-12 lg:px-20 py-6">
+            <div className="max-w-md mx-auto h-px bg-gradient-to-r from-transparent via-muted-foreground/30 to-transparent" />
+          </div>
+
           {/* Solutions Section */}
           <div className="relative z-10 px-6 md:px-12 lg:px-20 pb-8 md:pb-12">
             <motion.h2 initial={{
