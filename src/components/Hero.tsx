@@ -177,7 +177,7 @@ const Hero = () => {
             />
           </div>
 
-          <div className="relative z-10 px-6 md:px-12 lg:px-20 pt-48 md:pt-60 pb-20 md:pb-28">
+          <div className="relative z-10 px-6 md:px-12 lg:px-20 pt-40 md:pt-52 pb-16 md:pb-24">
             <div className="max-w-4xl mx-auto text-center pt-12 md:pt-16">
               {/* Main Headline */}
               <motion.h1
