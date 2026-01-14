@@ -219,7 +219,7 @@ const Hero = () => {
                 {/* Scrolling logos */}
                 <div className="flex w-max">
                   <motion.div
-                    className="flex items-center gap-12 md:gap-16"
+                    className="flex items-center gap-6 md:gap-8"
                     animate={{
                       x: ["0%", "-50%"],
                     }}
@@ -235,7 +235,7 @@ const Hero = () => {
                     {logos.map((logo, index) => (
                       <div
                         key={`${logo.name}-${index}`}
-                        className="flex items-center justify-center shrink-0 h-10 md:h-12"
+                        className="flex items-center justify-center shrink-0 h-6 md:h-8"
                       >
                         {logo.src ? (
                           <img
@@ -244,8 +244,8 @@ const Hero = () => {
                             className="h-full w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
                           />
                         ) : (
-                          <div className="h-8 md:h-10 px-6 flex items-center justify-center bg-white/50 rounded-lg border border-sage/20">
-                            <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
+                          <div className="h-5 md:h-6 px-4 flex items-center justify-center bg-white/50 rounded-lg border border-sage/20">
+                            <span className="text-xs font-medium text-muted-foreground whitespace-nowrap">
                               {logo.name}
                             </span>
                           </div>
