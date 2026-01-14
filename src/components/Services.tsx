@@ -65,14 +65,6 @@ const Services = () => {
 
         {/* Section Header */}
         <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-sage font-medium text-sm tracking-wide uppercase mb-4 block"
-          >
-            Our Services
-          </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
