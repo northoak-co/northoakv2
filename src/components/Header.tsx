@@ -73,12 +73,14 @@ const Header = () => {
         {/* Logo - animates from just outside nav to left edge */}
         <motion.a 
           href="#" 
-          className="flex items-center absolute"
+          className="flex items-center absolute left-6"
           animate={{
-            left: isScrolled ? "1.5rem" : `calc(50% - ${centerOffset}px)`,
-            x: isScrolled ? 0 : "-100%",
+            x: isScrolled ? 0 : `calc(50vw - ${centerOffset}px - 1.5rem - 100%)`,
           }}
-          transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ 
+            duration: 0.5, 
+            ease: [0.4, 0, 0.2, 1],
+          }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
@@ -107,17 +109,19 @@ const Header = () => {
 
         {/* CTA Button - animates from just outside nav to right edge */}
         <motion.div 
-          className="hidden lg:block absolute"
+          className="hidden lg:block absolute right-6"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ 
             opacity: 1, 
             scale: 1,
-            right: isScrolled ? "1.5rem" : `calc(50% - ${centerOffset}px)`,
-            x: isScrolled ? 0 : "100%",
+            x: isScrolled ? 0 : `calc(-50vw + ${centerOffset}px + 1.5rem + 100%)`,
           }}
-          transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ 
+            duration: 0.5, 
+            ease: [0.4, 0, 0.2, 1],
+          }}
         >
-          <Button 
+          <Button
             variant="hero" 
             size="sm" 
             className="rounded-xl px-5 transition-transform hover:scale-105 active:scale-95"
