@@ -322,7 +322,7 @@ const Hero = () => {
             duration: 0.5,
             delay: 0.3
           }} className="text-xl md:text-2xl font-semibold text-foreground text-center mb-8">
-              Which solutions are you looking for?
+              A global team of operations experts
             </motion.h2>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8">
               {solutions.map((solution, index) => <Link key={solution.name} to={solution.link} className="group">
