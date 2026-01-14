@@ -206,13 +206,14 @@ const Hero = () => {
                 </p>
               </motion.div>
 
-              {/* Logo carousel container */}
-              <div className="relative flex-1 w-full min-w-0 overflow-hidden">
-                {/* Gradient masks for fade effect - using mask-image for true transparency */}
-                <div className="absolute inset-0 z-10 pointer-events-none" style={{
-                  background: "linear-gradient(to right, hsl(102 35% 92%) 0%, transparent 10%, transparent 90%, hsl(102 35% 92%) 100%)"
-                }} />
-
+              {/* Logo carousel container with mask for true transparency fade */}
+              <div 
+                className="relative flex-1 w-full min-w-0 overflow-hidden"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)"
+                }}
+              >
                 {/* Scrolling logos */}
                 <div className="flex w-max">
                   <motion.div
