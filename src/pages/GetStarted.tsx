@@ -83,8 +83,8 @@ const GetStarted = () => {
       <Header />
 
       <main>
-        {/* Hero Section with Box */}
-        <section className="relative bg-background pt-24 md:pt-28 pb-8 overflow-hidden">
+        {/* Hero Section with Box - matching homepage structure */}
+        <section className="relative bg-background pt-4 pb-8 overflow-hidden">
           <div className="mx-auto px-3 md:px-4 relative z-10">
             <motion.div
               ref={containerRef}
@@ -149,8 +149,8 @@ const GetStarted = () => {
                 />
               </div>
 
-              {/* Content */}
-              <div className="relative z-10 px-6 md:px-12 lg:px-20 pt-12 md:pt-16 pb-12 md:pb-16">
+              {/* Content - with top padding to account for fixed navbar, matching homepage */}
+              <div className="relative z-10 px-6 md:px-12 lg:px-20 pt-40 md:pt-52 pb-12 md:pb-16">
                 <div className="max-w-7xl mx-auto">
                   <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                     {/* Left side - Content */}
