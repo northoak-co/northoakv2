@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Clock, SlidersVertical, Rocket, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -52,10 +53,12 @@ const Process = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <Button variant="hero" size="lg" className="gap-2">
-              Book a Consultation
-              <ArrowRight className="w-4 h-4" />
-            </Button>
+            <Link to="/get-started">
+              <Button variant="hero" size="lg" className="gap-2">
+                Book a Consultation
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
           </motion.div>
         </div>
 
