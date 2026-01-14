@@ -63,12 +63,12 @@ const Partners = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 * index }}
-              className="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+              className="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 flex items-center justify-center w-28 h-12 md:w-36 md:h-14"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-8 md:h-10 w-auto object-contain"
+                className="max-h-full max-w-full object-contain"
               />
             </motion.div>
           ))}
