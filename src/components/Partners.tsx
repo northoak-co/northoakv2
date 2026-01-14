@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
 
+// Import local logos
+import makeLogo from "@/assets/logos/make.png";
+import hubspotLogo from "@/assets/logos/hubspot.png";
+import intercomLogo from "@/assets/logos/intercom.png";
+
 const partners = [
   { name: "Atlassian", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/67116cfa1524cef036bbe6fd_2560px-Atlassian-logo.svg.png" },
   { name: "Freshdesk", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/67116db612929faba7c2fdc1_freshdesk.png" },
   { name: "Gorgias", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/6711328db6c1a551c65e5c72_Gorgias-image.png" },
-  { name: "Hubspot", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/6711328c484599c48c523f3f_images.png" },
-  { name: "Intercom", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/6711328cfcd56570fac15248_intercom-vector-logo-2022.png" },
-  { name: "Make", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/67116cfb6962a3648854dee6_make.jpeg" },
+  { name: "Hubspot", logo: hubspotLogo },
+  { name: "Intercom", logo: intercomLogo },
+  { name: "Make", logo: makeLogo },
   { name: "Monday", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/6711328c9b28af181a3b2da4_Monday_logo.svg.png" },
   { name: "Pipedrive", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/6711328ca23640b475d7c165_Pipedrive_Logo_gray.png" },
   { name: "QuickBooks", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/6711328c686f93c955b34c91_Intuit_QuickBooks_logo.png" },
