@@ -18,12 +18,12 @@ const Header = () => {
       }
     };
     updateNavWidth();
-    window.addEventListener('resize', updateNavWidth);
-    return () => window.removeEventListener('resize', updateNavWidth);
+    window.addEventListener("resize", updateNavWidth);
+    return () => window.removeEventListener("resize", updateNavWidth);
   }, []);
 
   // Calculate offset: half nav width + gap for spacing outside nav
-  const centerOffset = (navWidth / 2) + 48;
+  const centerOffset = navWidth / 2 + 69;
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -47,19 +47,19 @@ const Header = () => {
     <motion.header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ 
-        duration: 0.3, 
-        ease: [0.25, 0.1, 0.25, 1] 
+      transition={{
+        duration: 0.3,
+        ease: [0.25, 0.1, 0.25, 1],
       }}
       className="fixed top-8 left-0 right-0 z-50 px-9 md:px-10"
     >
-      <motion.div 
+      <motion.div
         className="mx-auto h-16 flex items-center transition-all duration-300 relative"
         style={{ borderStyle: "solid" }}
         animate={{
           backgroundColor: isScrolled ? "hsl(var(--card) / 0.98)" : "transparent",
-          boxShadow: isScrolled 
-            ? "0 8px 32px -8px hsl(102 44% 51% / 0.15), 0 4px 16px -4px hsl(0 0% 0% / 0.1)" 
+          boxShadow: isScrolled
+            ? "0 8px 32px -8px hsl(102 44% 51% / 0.15), 0 4px 16px -4px hsl(0 0% 0% / 0.1)"
             : "none",
           backdropFilter: isScrolled ? "blur(16px)" : "none",
           borderRadius: isScrolled ? "1rem" : "0",
@@ -71,21 +71,21 @@ const Header = () => {
         transition={{ duration: 0.3 }}
       >
         {/* Logo - animates from just outside nav to left edge */}
-        <motion.a 
-          href="#" 
+        <motion.a
+          href="#"
           className="flex items-center absolute"
           animate={{
             left: isScrolled ? "1.5rem" : `calc(50% - ${centerOffset}px)`,
             x: isScrolled ? 0 : "-100%",
           }}
-          transition={{ 
-            duration: 0.5, 
+          transition={{
+            duration: 0.5,
             ease: [0.4, 0, 0.2, 1],
           }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <img src={logo} alt="NorthOak" className="h-7 w-auto object-contain" style={{ imageRendering: 'auto' }} />
+          <img src={logo} alt="NorthOak" className="h-7 w-auto object-contain" style={{ imageRendering: "auto" }} />
         </motion.a>
 
         {/* Desktop Navigation - stays centered */}
@@ -101,31 +101,29 @@ const Header = () => {
               className="flex items-center gap-1 px-4 py-2 text-foreground/80 hover:text-foreground transition-colors text-sm font-medium rounded-lg hover:bg-muted/50"
             >
               {link.label}
-              {link.hasDropdown && (
-                <ChevronDown className="w-4 h-4 opacity-60" />
-              )}
+              {link.hasDropdown && <ChevronDown className="w-4 h-4 opacity-60" />}
             </motion.a>
           ))}
         </nav>
 
         {/* CTA Button - animates from just outside nav to right edge */}
-        <motion.div 
+        <motion.div
           className="hidden lg:block absolute"
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ 
-            opacity: 1, 
+          animate={{
+            opacity: 1,
             scale: 1,
             right: isScrolled ? "1.5rem" : `calc(50% - ${centerOffset}px)`,
             x: isScrolled ? 0 : "100%",
           }}
-          transition={{ 
-            duration: 0.5, 
+          transition={{
+            duration: 0.5,
             ease: [0.4, 0, 0.2, 1],
           }}
         >
           <Button
-            variant="hero" 
-            size="sm" 
+            variant="hero"
+            size="sm"
             className="rounded-xl px-5 transition-transform hover:scale-105 active:scale-95"
           >
             Get Started
@@ -186,9 +184,7 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <span className="font-medium">{link.label}</span>
-                  {link.hasDropdown && (
-                    <ChevronDown className="w-4 h-4 opacity-60" />
-                  )}
+                  {link.hasDropdown && <ChevronDown className="w-4 h-4 opacity-60" />}
                 </motion.a>
               ))}
               <motion.div
