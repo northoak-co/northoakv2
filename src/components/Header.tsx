@@ -38,7 +38,7 @@ const Header = () => {
       className="fixed top-8 left-0 right-0 z-50 px-9 md:px-10"
     >
       <motion.div 
-        className="mx-auto h-16 flex items-center justify-between transition-all duration-300"
+        className="mx-auto h-16 flex items-center transition-all duration-300 relative"
         style={{ borderStyle: "solid" }}
         animate={{
           backgroundColor: isScrolled ? "hsl(var(--card) / 0.98)" : "transparent",
@@ -49,23 +49,27 @@ const Header = () => {
           borderRadius: isScrolled ? "1rem" : "0",
           borderColor: isScrolled ? "hsl(var(--border) / 0.5)" : "transparent",
           borderWidth: isScrolled ? "1px" : "0px",
-          paddingLeft: isScrolled ? "1.5rem" : "3rem",
-          paddingRight: isScrolled ? "1.5rem" : "3rem",
+          paddingLeft: "1.5rem",
+          paddingRight: "1.5rem",
         }}
         transition={{ duration: 0.3 }}
       >
-        {/* Logo */}
+        {/* Logo - animates from center-ish to left edge */}
         <motion.a 
           href="#" 
-          className="flex items-center"
+          className="flex items-center absolute"
+          animate={{
+            left: isScrolled ? "1.5rem" : "calc(50% - 220px)",
+          }}
+          transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
           <img src={logo} alt="NorthOak" className="h-7 w-auto object-contain" style={{ imageRendering: 'auto' }} />
         </motion.a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
+        {/* Desktop Navigation - stays centered */}
+        <nav className="hidden lg:flex items-center gap-1 mx-auto">
           {navLinks.map((link, index) => (
             <motion.a
               key={link.label}
@@ -84,12 +88,16 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* CTA Button */}
+        {/* CTA Button - animates from center-ish to right edge */}
         <motion.div 
-          className="hidden lg:block"
+          className="hidden lg:block absolute"
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 0.3 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1,
+            right: isScrolled ? "1.5rem" : "calc(50% - 220px)",
+          }}
+          transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <Button 
             variant="hero" 
