@@ -1,9 +1,17 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import decorativeLeaves from "@/assets/decorative-leaves.png";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
-  const rotatingWords = ["customer service", "finance & accounting", "HR Admin", "virtual assistance", "back office admin"];
+  const rotatingWords = [
+    "customer service",
+    "finance & accounting",
+    "payroll admin",
+    "social media",
+    "virtual assistance",
+    "back office admin",
+  ];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   useEffect(() => {
@@ -22,6 +30,16 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center pt-16 md:pt-24">
+          {/* Decorative Leaves */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center mb-8"
+          >
+            <img src={decorativeLeaves} alt="Decorative leaves" className="w-48 md:w-64 h-auto" />
+          </motion.div>
+
           {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -69,30 +87,19 @@ const Hero = () => {
             className="flex justify-center mb-12"
           >
             <button className="group flex items-center bg-sage hover:bg-sage-dark transition-colors duration-200 rounded-full overflow-hidden">
-              <span className="px-6 py-3 text-white font-medium">
-                Speak With an Expert
-              </span>
+              <span className="px-6 py-3 text-white font-medium">Speak With an Expert</span>
               <span className="flex items-center justify-center w-10 h-10 m-1.5 bg-white rounded-full">
                 <ArrowRight className="w-4 h-4 text-sage" />
               </span>
             </button>
           </motion.div>
-
         </div>
       </div>
 
       {/* Organic Wave Divider */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          viewBox="0 0 1440 100"
-          fill="none"
-          className="w-full h-auto"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 50C240 80 480 90 720 70C960 50 1200 30 1440 50V100H0V50Z"
-            className="fill-background"
-          />
+        <svg viewBox="0 0 1440 100" fill="none" className="w-full h-auto" preserveAspectRatio="none">
+          <path d="M0 50C240 80 480 90 720 70C960 50 1200 30 1440 50V100H0V50Z" className="fill-background" />
         </svg>
       </div>
     </section>
