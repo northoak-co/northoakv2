@@ -89,7 +89,7 @@ const CTASection = () => {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   className="flex items-center justify-center lg:justify-start gap-3 mb-8"
                 >
-                  <span className="px-5 py-2.5 bg-sage-light text-foreground font-medium text-sm rounded-full border border-sage/30">
+                  <span className="px-5 py-2.5 bg-sage/20 text-foreground font-medium text-sm rounded-full border border-sage/40">
                     Your Team
                   </span>
                   <span className="text-muted-foreground font-medium">+</span>
