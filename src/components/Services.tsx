@@ -52,17 +52,15 @@ const Services = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex items-center justify-center mb-12"
+          className="flex items-center justify-center gap-3 mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-2 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-border shadow-sm">
-            <span className="px-5 py-2.5 bg-sage text-white font-medium text-sm rounded-full shadow-sm">
-              Your Team
-            </span>
-            <span className="text-muted-foreground font-medium px-1">+</span>
-            <span className="px-4 py-2 bg-white rounded-full border border-sage/20 flex items-center shadow-sm">
-              <img src={logo} alt="NorthOak" className="h-5 w-auto" />
-            </span>
-          </div>
+          <span className="px-5 py-2.5 bg-sage-light text-foreground font-medium text-sm rounded-full border border-sage/30">
+            Your Team
+          </span>
+          <span className="text-muted-foreground font-medium">+</span>
+          <span className="px-4 py-2 bg-white rounded-full border border-border flex items-center shadow-sm">
+            <img src={logo} alt="NorthOak" className="h-5 w-auto" />
+          </span>
         </motion.div>
 
         {/* Section Header */}
