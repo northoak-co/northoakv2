@@ -7,8 +7,8 @@ const Hero = () => {
     "customer service",
     "finance & accounting",
     "payroll admin",
-    "social media",
-    "virtual assistance",
+    "social media management",
+    "video editing",
     "back office admin",
   ];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
