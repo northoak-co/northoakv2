@@ -50,7 +50,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen bg-background pt-4 pb-16 overflow-hidden">
       {/* Soft Hero Box */}
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="mx-auto px-3 md:px-4 relative z-10">
         <motion.div 
           ref={containerRef}
           onMouseMove={handleMouseMove}
