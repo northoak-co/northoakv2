@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import truebeautyLogo from "@/assets/logos/truebeauty.png";
 
 const partners = [
   { name: "Atlassian", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/67116cfa1524cef036bbe6fd_2560px-Atlassian-logo.svg.png" },
@@ -12,6 +13,7 @@ const partners = [
   { name: "QuickBooks", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/6711328c686f93c955b34c91_Intuit_QuickBooks_logo.png" },
   { name: "Zendesk", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/6711328ca195c84b1f6a82d7_Zendesk-Logo.png" },
   { name: "Zapier", logo: "https://cdn.prod.website-files.com/65d631f6892f8b862233316f/6711328cb4d3d4f4a5a1e101_Zapier-Logo.png" },
+  { name: "True Beauty Digital", logo: truebeautyLogo },
 ];
 
 const Partners = () => {
