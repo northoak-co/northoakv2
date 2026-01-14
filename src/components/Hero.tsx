@@ -231,32 +231,15 @@ const Hero = () => {
               >
                 Quickly and seamlessly scale your team with agile, highly customizable solutions that power your growth.
               </motion.p>
-
-              {/* CTA Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex justify-center"
-              >
-                <Link to="/get-started">
-                  <button className="group flex items-center bg-sage hover:bg-sage-dark transition-colors duration-200 rounded-full overflow-hidden">
-                    <span className="px-6 py-3 text-white font-medium">Speak With an Expert</span>
-                    <span className="flex items-center justify-center w-10 h-10 m-1.5 bg-white rounded-full">
-                      <ArrowRight className="w-4 h-4 text-sage" />
-                    </span>
-                  </button>
-                </Link>
-              </motion.div>
             </div>
           </div>
 
           {/* Solutions Section */}
-          <div className="relative z-10 px-6 md:px-12 lg:px-20 pb-12 md:pb-16">
+          <div className="relative z-10 px-6 md:px-12 lg:px-20 pb-8 md:pb-12">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               className="text-xl md:text-2xl font-semibold text-foreground text-center mb-8"
             >
               Which solutions are you looking for?
@@ -271,7 +254,7 @@ const Hero = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                     className="flex flex-col items-center"
                   >
                     <div className="w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-xl overflow-hidden mb-3 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg">
@@ -288,6 +271,25 @@ const Hero = () => {
                 </Link>
               ))}
             </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="relative z-10 px-6 md:px-12 lg:px-20 pb-12 md:pb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+              className="flex justify-center"
+            >
+              <Link to="/get-started">
+                <button className="group flex items-center bg-sage hover:bg-sage-dark transition-colors duration-200 rounded-full overflow-hidden">
+                  <span className="px-6 py-3 text-white font-medium">Speak With an Expert</span>
+                  <span className="flex items-center justify-center w-10 h-10 m-1.5 bg-white rounded-full">
+                    <ArrowRight className="w-4 h-4 text-sage" />
+                  </span>
+                </button>
+              </Link>
+            </motion.div>
           </div>
 
           {/* Social Proof Section */}
