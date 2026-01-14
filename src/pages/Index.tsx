@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import SocialProof from "@/components/SocialProof";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Process from "@/components/Process";
@@ -15,7 +14,6 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <SocialProof />
         <Services />
         <About />
         <Process />
