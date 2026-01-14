@@ -20,7 +20,7 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <section className="relative min-h-screen bg-background pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-screen bg-background pt-4 pb-16 overflow-hidden">
       {/* Soft Hero Box */}
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
@@ -39,8 +39,8 @@ const Hero = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sage/[0.03] rounded-full blur-3xl" />
           </div>
 
-          <div className="relative z-10 px-6 md:px-12 lg:px-20 py-16 md:py-24 lg:py-32">
-            <div className="max-w-4xl mx-auto text-center">
+          <div className="relative z-10 px-6 md:px-12 lg:px-20 pt-24 md:pt-32 pb-16 md:pb-24 lg:pb-32">
+            <div className="max-w-4xl mx-auto text-center pt-8 md:pt-12">
               {/* Main Headline */}
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
