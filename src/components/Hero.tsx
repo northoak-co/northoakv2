@@ -3,6 +3,13 @@ import { ArrowRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
+// Import character images
+import crmManagementImg from "@/assets/characters/crm-management.png";
+import customerSupportImg from "@/assets/characters/customer-support.png";
+import hrAdminImg from "@/assets/characters/hr-admin.png";
+import processAutomationImg from "@/assets/characters/process-automation.png";
+import financeAccountingImg from "@/assets/characters/finance-accounting.png";
+
 // Import logos
 import unboundAcademyLogo from "@/assets/logos/unbound-academy.png";
 import prequelLogo from "@/assets/logos/prequel.png";
@@ -64,6 +71,14 @@ const logos = [
   { name: "Boys Get Sad Too", src: boysgetsadtooLogo },
   { name: "Favored Live", src: favoredliveLogo },
   { name: "BlueJ", src: bluejLogo },
+];
+
+const solutions = [
+  { name: "CRM Management", image: crmManagementImg, link: "/roles/crm-management" },
+  { name: "Customer Support", image: customerSupportImg, link: "/roles/customer-support" },
+  { name: "HR Admin", image: hrAdminImg, link: "/roles/hr-admin" },
+  { name: "Process Automation", image: processAutomationImg, link: "/roles/virtual-assistant" },
+  { name: "Finance & Accounting", image: financeAccountingImg, link: "/roles/finance-accounting" },
 ];
 
 const Hero = () => {
@@ -233,6 +248,45 @@ const Hero = () => {
                   </button>
                 </Link>
               </motion.div>
+            </div>
+          </div>
+
+          {/* Solutions Section */}
+          <div className="relative z-10 px-6 md:px-12 lg:px-20 pb-12 md:pb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-xl md:text-2xl font-semibold text-foreground text-center mb-8"
+            >
+              Which solutions are you looking for?
+            </motion.h2>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8">
+              {solutions.map((solution, index) => (
+                <Link
+                  key={solution.name}
+                  to={solution.link}
+                  className="group"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    className="flex flex-col items-center"
+                  >
+                    <div className="w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-xl overflow-hidden mb-3 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg">
+                      <img
+                        src={solution.image}
+                        alt={solution.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span className="text-sm md:text-base font-medium text-foreground group-hover:text-sage transition-colors">
+                      {solution.name}
+                    </span>
+                  </motion.div>
+                </Link>
+              ))}
             </div>
           </div>
 
