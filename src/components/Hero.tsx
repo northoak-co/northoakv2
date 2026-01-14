@@ -21,7 +21,6 @@ import brightearlyLogo from "@/assets/logos/brightearly.png";
 import vennLogo from "@/assets/logos/venn.png";
 import boysgetsadtooLogo from "@/assets/logos/boysgetsadtoo.png";
 import favoredliveLogo from "@/assets/logos/favoredlive.png";
-import bluejLogo from "@/assets/logos/bluej.png";
 
 const logos = [
   { name: "Unbound Academy", src: unboundAcademyLogo },
@@ -42,7 +41,6 @@ const logos = [
   { name: "Venn", src: vennLogo },
   { name: "Boys Get Sad Too", src: boysgetsadtooLogo },
   { name: "Favored Live", src: favoredliveLogo },
-  { name: "BlueJ", src: bluejLogo },
   // Duplicates for seamless loop
   { name: "Unbound Academy", src: unboundAcademyLogo },
   { name: "Prequel", src: prequelLogo },
@@ -62,7 +60,6 @@ const logos = [
   { name: "Venn", src: vennLogo },
   { name: "Boys Get Sad Too", src: boysgetsadtooLogo },
   { name: "Favored Live", src: favoredliveLogo },
-  { name: "BlueJ", src: bluejLogo },
 ];
 
 const Hero = () => {
