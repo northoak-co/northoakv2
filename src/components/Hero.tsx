@@ -241,9 +241,9 @@ const Hero = () => {
                 className="shrink-0"
               >
                 <p className="text-sm md:text-base text-muted-foreground font-medium">
-                  Trusted by <span className="text-foreground font-semibold">200+</span> customers
+                  Trusted by startups like yours
                   <br />
-                  <span className="text-foreground/80">to fuel growth</span>
+                  to fuel growth
                 </p>
               </motion.div>
 
