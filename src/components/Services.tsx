@@ -7,6 +7,7 @@ import {
   PiggyBank, 
   FileText 
 } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const services = [
   {
@@ -45,6 +46,22 @@ const Services = () => {
   return (
     <section id="services" className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-6">
+        {/* Team + NorthOak Pills */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center justify-center gap-3 mb-10"
+        >
+          <span className="px-4 py-2 bg-sage-light text-sage font-medium text-sm rounded-full border border-sage/20">
+            Your Team
+          </span>
+          <span className="text-muted-foreground text-lg">+</span>
+          <span className="px-4 py-2 bg-white border border-border rounded-full flex items-center gap-2">
+            <img src={logo} alt="NorthOak" className="h-5 w-auto" />
+          </span>
+        </motion.div>
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <motion.span
