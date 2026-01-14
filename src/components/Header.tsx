@@ -1,4 +1,4 @@
-import { motion, useScroll, useMotionValueEvent, AnimatePresence, useTransform } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
@@ -25,22 +25,6 @@ const Header = () => {
   // Calculate offset: half nav width + gap for spacing outside nav
   const centerOffset = navWidth / 2 + 100;
   const { scrollY } = useScroll();
-
-  // Create smooth motion values for logo positioning
-  const logoLeft = useTransform(
-    scrollY,
-    [0, 50],
-    [`calc(50% - ${centerOffset}px)`, "1.5rem"]
-  );
-  const logoX = useTransform(scrollY, [0, 50], ["-100%", "0%"]);
-
-  // Create smooth motion values for button positioning
-  const buttonRight = useTransform(
-    scrollY,
-    [0, 50],
-    [`calc(50% - ${centerOffset}px)`, "1.5rem"]
-  );
-  const buttonX = useTransform(scrollY, [0, 50], ["100%", "0%"]);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     // Only track if scrolled for styling changes
@@ -90,9 +74,13 @@ const Header = () => {
         <motion.a
           href="#"
           className="flex items-center absolute"
-          style={{
-            left: logoLeft,
-            x: logoX,
+          animate={{
+            left: isScrolled ? "1.5rem" : `calc(50% - ${centerOffset}px)`,
+            x: isScrolled ? 0 : "-100%",
+          }}
+          transition={{
+            duration: 0.5,
+            ease: [0.4, 0, 0.2, 1],
           }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -125,10 +113,8 @@ const Header = () => {
           animate={{
             opacity: 1,
             scale: 1,
-          }}
-          style={{
-            right: buttonRight,
-            x: buttonX,
+            right: isScrolled ? "1.5rem" : `calc(50% - ${centerOffset}px)`,
+            x: isScrolled ? 0 : "100%",
           }}
           transition={{
             duration: 0.5,
