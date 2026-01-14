@@ -48,18 +48,21 @@ const Services = () => {
       <div className="container mx-auto px-6">
         {/* Team + NorthOak Pills */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="flex items-center justify-center gap-3 mb-10"
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-center mb-12"
         >
-          <span className="px-4 py-2 bg-sage-light text-sage font-medium text-sm rounded-full border border-sage/20">
-            Your Team
-          </span>
-          <span className="text-muted-foreground text-lg">+</span>
-          <span className="px-4 py-2 bg-white border border-border rounded-full flex items-center gap-2">
-            <img src={logo} alt="NorthOak" className="h-5 w-auto" />
-          </span>
+          <div className="inline-flex items-center gap-2 px-2 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-border shadow-sm">
+            <span className="px-5 py-2.5 bg-sage text-white font-medium text-sm rounded-full shadow-sm">
+              Your Team
+            </span>
+            <span className="text-muted-foreground font-medium px-1">+</span>
+            <span className="px-4 py-2 bg-white rounded-full border border-sage/20 flex items-center shadow-sm">
+              <img src={logo} alt="NorthOak" className="h-5 w-auto" />
+            </span>
+          </div>
         </motion.div>
 
         {/* Section Header */}
