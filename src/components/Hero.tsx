@@ -1,6 +1,7 @@
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 // Import logos
 import unboundAcademyLogo from "@/assets/logos/unbound-academy.png";
@@ -223,12 +224,14 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex justify-center"
               >
-                <button className="group flex items-center bg-sage hover:bg-sage-dark transition-colors duration-200 rounded-full overflow-hidden">
-                  <span className="px-6 py-3 text-white font-medium">Speak With an Expert</span>
-                  <span className="flex items-center justify-center w-10 h-10 m-1.5 bg-white rounded-full">
-                    <ArrowRight className="w-4 h-4 text-sage" />
-                  </span>
-                </button>
+                <Link to="/get-started">
+                  <button className="group flex items-center bg-sage hover:bg-sage-dark transition-colors duration-200 rounded-full overflow-hidden">
+                    <span className="px-6 py-3 text-white font-medium">Speak With an Expert</span>
+                    <span className="flex items-center justify-center w-10 h-10 m-1.5 bg-white rounded-full">
+                      <ArrowRight className="w-4 h-4 text-sage" />
+                    </span>
+                  </button>
+                </Link>
               </motion.div>
             </div>
           </div>

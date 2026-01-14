@@ -2,6 +2,7 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
@@ -97,13 +98,15 @@ const Header = () => {
             ease: [0.25, 0.1, 0.25, 1],
           }}
         >
-          <Button
-            variant="hero"
-            size="sm"
-            className="rounded-xl px-5 transition-transform hover:scale-105 active:scale-95"
-          >
-            Get Started
-          </Button>
+          <Link to="/get-started">
+            <Button
+              variant="hero"
+              size="sm"
+              className="rounded-xl px-5 transition-transform hover:scale-105 active:scale-95"
+            >
+              Get Started
+            </Button>
+          </Link>
         </motion.div>
 
         {/* Mobile Menu Button */}
@@ -168,9 +171,11 @@ const Header = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25, duration: 0.2 }}
               >
-                <Button variant="hero" className="mt-3 w-full rounded-xl">
-                  Get Started
-                </Button>
+                <Link to="/get-started" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="hero" className="mt-3 w-full rounded-xl">
+                    Get Started
+                  </Button>
+                </Link>
               </motion.div>
             </nav>
           </motion.div>
