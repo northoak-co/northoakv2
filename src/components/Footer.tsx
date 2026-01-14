@@ -37,9 +37,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-transparent">
+    <footer className="relative z-10">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 py-16 bg-background">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
           {/* Logo & Contact Column */}
           <div className="lg:col-span-2">
