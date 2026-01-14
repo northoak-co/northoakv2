@@ -1,13 +1,29 @@
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [navWidth, setNavWidth] = useState(400);
+  const navRef = useRef<HTMLElement>(null);
 
+  // Measure nav width for dynamic logo/button positioning
+  useEffect(() => {
+    const updateNavWidth = () => {
+      if (navRef.current) {
+        setNavWidth(navRef.current.offsetWidth);
+      }
+    };
+    updateNavWidth();
+    window.addEventListener('resize', updateNavWidth);
+    return () => window.removeEventListener('resize', updateNavWidth);
+  }, []);
+
+  // Calculate offset: half nav width + gap for spacing outside nav
+  const centerOffset = (navWidth / 2) + 24;
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -54,12 +70,13 @@ const Header = () => {
         }}
         transition={{ duration: 0.3 }}
       >
-        {/* Logo - animates from center-ish to left edge */}
+        {/* Logo - animates from just outside nav to left edge */}
         <motion.a 
           href="#" 
           className="flex items-center absolute"
           animate={{
-            left: isScrolled ? "1.5rem" : "calc(50% - 220px)",
+            left: isScrolled ? "1.5rem" : `calc(50% - ${centerOffset}px)`,
+            x: isScrolled ? 0 : "-100%",
           }}
           transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           whileHover={{ scale: 1.02 }}
@@ -69,7 +86,7 @@ const Header = () => {
         </motion.a>
 
         {/* Desktop Navigation - stays centered */}
-        <nav className="hidden lg:flex items-center gap-1 mx-auto">
+        <nav ref={navRef} className="hidden lg:flex items-center gap-1 mx-auto">
           {navLinks.map((link, index) => (
             <motion.a
               key={link.label}
@@ -88,14 +105,15 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* CTA Button - animates from center-ish to right edge */}
+        {/* CTA Button - animates from just outside nav to right edge */}
         <motion.div 
           className="hidden lg:block absolute"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ 
             opacity: 1, 
             scale: 1,
-            right: isScrolled ? "1.5rem" : "calc(50% - 220px)",
+            right: isScrolled ? "1.5rem" : `calc(50% - ${centerOffset}px)`,
+            x: isScrolled ? 0 : "100%",
           }}
           transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
         >
