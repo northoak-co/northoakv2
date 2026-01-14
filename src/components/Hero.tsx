@@ -4,18 +4,20 @@ import { useState, useEffect, useRef } from "react";
 
 // Import logos
 import unboundAcademyLogo from "@/assets/logos/unbound-academy.png";
+import prequelLogo from "@/assets/logos/prequel.png";
+import novatioLogo from "@/assets/logos/novatio.png";
 
 const logos = [
   { name: "Unbound Academy", src: unboundAcademyLogo },
-  { name: "Company 2", src: "" },
-  { name: "Company 3", src: "" },
+  { name: "Prequel", src: prequelLogo },
+  { name: "Novatio", src: novatioLogo },
   { name: "Company 4", src: "" },
   { name: "Company 5", src: "" },
   { name: "Company 6", src: "" },
   // Duplicates for seamless loop
   { name: "Unbound Academy", src: unboundAcademyLogo },
-  { name: "Company 2", src: "" },
-  { name: "Company 3", src: "" },
+  { name: "Prequel", src: prequelLogo },
+  { name: "Novatio", src: novatioLogo },
   { name: "Company 4", src: "" },
   { name: "Company 5", src: "" },
   { name: "Company 6", src: "" },
