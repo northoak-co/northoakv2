@@ -119,33 +119,6 @@ const CTASection = () => {
                 >
                   Book an intro call to learn more.
                 </motion.p>
-
-                {/* Decorative Arrow - hidden on mobile */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                  className="hidden lg:block absolute right-[48%] top-1/2 -translate-y-1/2"
-                >
-                  <svg width="80" height="60" viewBox="0 0 80 60" fill="none" className="text-sage">
-                    <path
-                      d="M5 5C20 5 50 5 60 25C70 45 75 55 75 55"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      fill="none"
-                    />
-                    <path
-                      d="M70 45L75 55L65 52"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      fill="none"
-                    />
-                  </svg>
-                </motion.div>
               </div>
 
               {/* Right Side - Form Card */}
