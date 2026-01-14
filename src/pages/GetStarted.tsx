@@ -84,7 +84,7 @@ const GetStarted = () => {
 
       <main>
         {/* Hero Section with Box */}
-        <section className="relative bg-background pt-4 pb-8 overflow-hidden">
+        <section className="relative bg-background pt-24 md:pt-28 pb-8 overflow-hidden">
           <div className="mx-auto px-3 md:px-4 relative z-10">
             <motion.div
               ref={containerRef}
