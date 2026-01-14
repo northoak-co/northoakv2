@@ -2,6 +2,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -108,10 +109,12 @@ const About = () => {
                       We only win if you win, so you can rest assured that your ROI will be positive.
                     </p>
                   </div>
-                  <Button variant="hero" size="lg" className="gap-2">
-                    Find out more
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
+                  <Link to="/get-started">
+                    <Button variant="hero" size="lg" className="gap-2">
+                      Find out more
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </Link>
                 </motion.div>
               </div>
             </div>
