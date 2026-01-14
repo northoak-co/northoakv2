@@ -177,8 +177,8 @@ const Hero = () => {
             />
           </div>
 
-          <div className="relative z-10 px-6 md:px-12 lg:px-20 pt-24 md:pt-32 pb-8 md:pb-12">
-            <div className="max-w-4xl mx-auto text-center pt-8 md:pt-12">
+          <div className="relative z-10 px-6 md:px-12 lg:px-20 pt-32 md:pt-44 pb-12 md:pb-20">
+            <div className="max-w-4xl mx-auto text-center pt-12 md:pt-16">
               {/* Main Headline */}
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
@@ -211,7 +211,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
+                className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
               >
                 Quickly and seamlessly scale your team with agile, highly customizable solutions that power your growth.
               </motion.p>
@@ -234,7 +234,7 @@ const Hero = () => {
           </div>
 
           {/* Social Proof Section */}
-          <div className="relative z-10 px-6 md:px-12 lg:px-20 pb-8 md:pb-12">
+          <div className="relative z-10 px-6 md:px-12 lg:px-20 pb-12 md:pb-16 mt-8 md:mt-12">
             <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
               {/* Trust text */}
               <motion.div
