@@ -30,6 +30,7 @@ import vennLogo from "@/assets/logos/venn.png";
 import boysgetsadtooLogo from "@/assets/logos/boysgetsadtoo.png";
 import favoredliveLogo from "@/assets/logos/favoredlive.png";
 import bluejLogo from "@/assets/logos/bluej.png";
+import truebeautyLogo from "@/assets/logos/truebeauty.png";
 const logos = [{
   name: "Unbound Academy",
   src: unboundAcademyLogo
@@ -87,6 +88,9 @@ const logos = [{
 }, {
   name: "BlueJ",
   src: bluejLogo
+}, {
+  name: "True Beauty",
+  src: truebeautyLogo
 },
 // Duplicates for seamless loop
 {
@@ -146,6 +150,9 @@ const logos = [{
 }, {
   name: "BlueJ",
   src: bluejLogo
+}, {
+  name: "True Beauty",
+  src: truebeautyLogo
 }];
 const solutions = [{
   name: "CRM Management",
