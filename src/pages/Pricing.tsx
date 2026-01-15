@@ -284,18 +284,6 @@ const Pricing = () => {
               ))}
             </div>
 
-            {/* Note about Ad Hoc */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="flex items-start gap-3 max-w-2xl mx-auto mt-8 p-4 bg-muted/50 rounded-xl border border-border"
-            >
-              <Info className="w-5 h-5 text-sage flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">Note:</strong> Ad Hoc Support is hourly only and does not include the comprehensive benefits available with monthly tiers.
-              </p>
-            </motion.div>
           </div>
         </section>
 
