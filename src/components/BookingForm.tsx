@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Popover,
   PopoverContent,
@@ -33,6 +35,14 @@ interface BookingFormProps {
 
 const BookingForm = ({ className = "" }: BookingFormProps) => {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [url, setUrl] = useState("");
+  const [size, setSize] = useState("");
+  const [source, setSource] = useState("");
+  const [notes, setNotes] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const toggleService = (value: string) => {
     setSelectedServices(prev =>
@@ -50,10 +60,63 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
     return `${selectedServices.length} services selected`;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted with services:", selectedServices);
+    
+    // Basic validation
+    if (!email || !company) {
+      toast({
+        title: "Missing required fields",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-form", {
+        body: {
+          email,
+          company,
+          url,
+          size,
+          services: selectedServices.map(s => 
+            serviceOptions.find(opt => opt.value === s)?.label || s
+          ),
+          source,
+          notes,
+        },
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Thank you!",
+        description: "Your request has been submitted. We'll be in touch soon!",
+      });
+
+      // Reset form
+      setEmail("");
+      setCompany("");
+      setUrl("");
+      setSize("");
+      setSource("");
+      setNotes("");
+      setSelectedServices([]);
+    } catch (error: any) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Submission failed",
+        description: "There was an error submitting your request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -71,6 +134,9 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
               type="email" 
               placeholder="name@company.com"
               className="h-12 rounded-xl"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="space-y-2">
@@ -80,6 +146,9 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
               type="text" 
               placeholder="Your company"
               className="h-12 rounded-xl"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+              required
             />
           </div>
         </div>
@@ -92,11 +161,13 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
               type="text" 
               placeholder="yourcompany.com"
               className="h-12 rounded-xl"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
             />
           </div>
           <div className="space-y-2">
             <Label htmlFor="size">Company Size*</Label>
-            <Select onValueChange={() => {}}>
+            <Select value={size} onValueChange={setSize}>
               <SelectTrigger id="size" className="h-12 rounded-xl">
                 <SelectValue placeholder="Please Select" />
               </SelectTrigger>
@@ -154,7 +225,7 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
 
         <div className="space-y-2">
           <Label htmlFor="source">How did you hear about us?*</Label>
-          <Select onValueChange={() => {}}>
+          <Select value={source} onValueChange={setSource}>
             <SelectTrigger id="source" className="h-12 rounded-xl">
               <SelectValue placeholder="Please Select" />
             </SelectTrigger>
@@ -175,6 +246,8 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
             id="notes"
             placeholder="Any additional details or requirements you'd like to share..."
             className="min-h-[100px] rounded-xl resize-none"
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
           />
         </div>
 
@@ -182,14 +255,9 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
           type="submit"
           variant="hero" 
           className="w-full h-12 rounded-xl text-base mt-4"
-          onClick={(e) => {
-            e.preventDefault();
-            console.log("Form submitted with services:", selectedServices);
-            // TODO: Add actual form submission logic here
-            alert("Form submitted! Connect to a backend to handle submissions.");
-          }}
+          disabled={isSubmitting}
         >
-          Book a Call
+          {isSubmitting ? "Submitting..." : "Book a Call"}
         </Button>
       </form>
     </div>
