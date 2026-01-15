@@ -26,15 +26,21 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="process" className="py-20 md:py-32 bg-gradient-to-b from-sage-light/50 to-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-sage/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-sage/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sage font-medium text-sm tracking-wide uppercase mb-4 block"
+            className="inline-block text-sage font-semibold text-sm tracking-widest uppercase mb-4 px-4 py-2 bg-sage/10 rounded-full"
           >
             How it Works
           </motion.span>
@@ -43,10 +49,20 @@ const Process = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 max-w-3xl mx-auto leading-tight"
           >
-            Step-by-step towards operational excellence
+            Step-by-step towards{" "}
+            <span className="text-sage">operational excellence</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="text-muted-foreground text-lg max-w-xl mx-auto mb-8"
+          >
+            A simple, proven process to transform your operations and scale your business efficiently.
+          </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +70,7 @@ const Process = () => {
             transition={{ delay: 0.2 }}
           >
             <Link to="/get-started">
-              <Button variant="hero" size="lg" className="gap-2">
+              <Button variant="hero" size="lg" className="gap-2 shadow-lg hover:shadow-xl transition-shadow">
                 Book a Consultation
                 <ArrowRight className="w-4 h-4" />
               </Button>
@@ -62,42 +78,94 @@ const Process = () => {
           </motion.div>
         </div>
 
-        {/* Steps */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
-              className="relative"
-            >
-              {/* Connection Line (desktop only) */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-border" />
-              )}
-              
-              <div className="text-center">
-                {/* Icon */}
-                <div className="w-20 h-20 mx-auto bg-sage-light rounded-2xl flex items-center justify-center mb-6 relative">
-                  <step.icon className="w-8 h-8 text-sage" />
-                  <span className="absolute -top-2 -right-2 w-8 h-8 bg-sage rounded-full flex items-center justify-center text-xs font-bold text-primary-foreground">
-                    {step.number}
-                  </span>
-                </div>
-                
-                {/* Content */}
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mx-auto">
-                  {step.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+        {/* Steps - Timeline Style */}
+        <div className="relative">
+          {/* Vertical line for mobile, horizontal for desktop */}
+          <div className="hidden md:block absolute top-24 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-sage/20 via-sage to-sage/20" />
+          <div className="md:hidden absolute top-0 bottom-0 left-8 w-0.5 bg-gradient-to-b from-sage/20 via-sage to-sage/20" />
+
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
+            {steps.map((step, index) => (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  delay: index * 0.2,
+                  duration: 0.5,
+                  ease: "easeOut"
+                }}
+                className="relative pl-20 md:pl-0"
+              >
+                {/* Step Card */}
+                <motion.div 
+                  className="bg-card rounded-3xl p-8 shadow-card hover:shadow-hover transition-all duration-500 border border-border/50 group"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  {/* Number badge - positioned at top */}
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 md:relative md:top-0 md:left-0 md:translate-x-0">
+                    <motion.div 
+                      className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-sage to-sage-dark rounded-2xl flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg mb-6"
+                      whileHover={{ rotate: 5 }}
+                    >
+                      {step.number}
+                    </motion.div>
+                  </div>
+
+                  {/* Icon */}
+                  <div className="w-16 h-16 bg-sage-light rounded-2xl flex items-center justify-center mb-6 group-hover:bg-sage/20 transition-colors duration-300">
+                    <step.icon className="w-7 h-7 text-sage group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  
+                  {/* Content */}
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-4 group-hover:text-sage transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
+
+                  {/* Decorative arrow for desktop */}
+                  {index < steps.length - 1 && (
+                    <div className="hidden md:flex absolute -right-8 lg:-right-10 top-1/2 -translate-y-1/2 z-10">
+                      <motion.div
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.2 + 0.3 }}
+                        className="w-6 h-6 bg-sage rounded-full flex items-center justify-center"
+                      >
+                        <ArrowRight className="w-3 h-3 text-primary-foreground" />
+                      </motion.div>
+                    </div>
+                  )}
+                </motion.div>
+
+                {/* Mobile timeline dot */}
+                <div className="md:hidden absolute left-6 top-8 w-4 h-4 bg-sage rounded-full border-4 border-background shadow-md" />
+              </motion.div>
+            ))}
+          </div>
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="text-center mt-16"
+        >
+          <p className="text-muted-foreground mb-4">
+            Ready to transform your operations?
+          </p>
+          <Link to="/get-started" className="inline-flex items-center gap-2 text-sage font-semibold hover:gap-3 transition-all duration-300 group">
+            Get started today
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
