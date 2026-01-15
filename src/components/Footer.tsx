@@ -29,18 +29,12 @@ const Footer = () => {
     { name: "FAQ", link: "#" },
   ];
 
-  const caseStudies = [
-    { name: "Case Study 1", link: "#" },
-    { name: "Case Study 2", link: "#" },
-    { name: "Case Study 3", link: "#" },
-    { name: "Case Study 4", link: "#" },
-  ];
 
   return (
     <footer className="relative z-10">
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-16 bg-background">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Logo & Contact Column */}
           <div className="lg:col-span-2">
             <motion.div
@@ -169,33 +163,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Case Studies Column */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Case studies</h4>
-            <ul className="space-y-3">
-              {caseStudies.map((study) => (
-                <li key={study.name}>
-                  <a 
-                    href={study.link} 
-                    className="text-muted-foreground hover:text-sage transition-colors text-sm"
-                  >
-                    {study.name}
-                  </a>
-                </li>
-              ))}
-              <li>
-                <a 
-                  href="#" 
-                  className="inline-flex items-center gap-2 text-foreground font-medium text-sm hover:text-sage transition-colors mt-2"
-                >
-                  View all
-                  <span className="w-6 h-6 rounded-full bg-sage-light flex items-center justify-center">
-                    <ArrowRight className="w-3 h-3 text-sage" />
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
 
