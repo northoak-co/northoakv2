@@ -96,7 +96,7 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
 
       toast({
         title: "Thank you!",
-        description: "Your request has been submitted. We'll be in touch soon!",
+        description: "Redirecting you to book your call...",
       });
 
       // Reset form
@@ -107,6 +107,9 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
       setSource("");
       setNotes("");
       setSelectedServices([]);
+
+      // Redirect to Calendly
+      window.location.href = "https://calendly.com/northoak/25min";
     } catch (error: any) {
       console.error("Form submission error:", error);
       toast({
