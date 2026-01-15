@@ -287,7 +287,7 @@ const GetStarted = () => {
                               <Input 
                                 id="url" 
                                 type="url" 
-                                placeholder="https://yourcompany.com"
+                                placeholder="yourcompany.com"
                                 className="h-12 rounded-xl"
                               />
                             </div>
