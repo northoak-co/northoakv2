@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -41,10 +42,23 @@ const Careers = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Build the Future of Work with Us
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               We're on a mission to transform how businesses operate. Join a team of passionate 
               individuals dedicated to delivering exceptional virtual staffing solutions.
             </p>
+            <a
+              href="https://apply.workable.com/northoak/?lng=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center bg-sage hover:bg-sage-dark transition-colors duration-200 rounded-full overflow-hidden"
+            >
+              <span className="px-6 py-3 text-white font-medium">
+                View Opportunities
+              </span>
+              <span className="flex items-center justify-center w-10 h-10 m-1.5 bg-white rounded-full">
+                <ArrowRight className="w-4 h-4 text-sage" />
+              </span>
+            </a>
           </motion.div>
         </div>
       </section>
