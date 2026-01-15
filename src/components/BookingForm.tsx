@@ -95,8 +95,8 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
           </div>
           <div className="space-y-2">
             <Label htmlFor="size">Company Size*</Label>
-            <Select>
-              <SelectTrigger className="h-12 rounded-xl">
+            <Select onValueChange={() => {}}>
+              <SelectTrigger id="size" className="h-12 rounded-xl">
                 <SelectValue placeholder="Please Select" />
               </SelectTrigger>
               <SelectContent>
@@ -153,8 +153,8 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
 
         <div className="space-y-2">
           <Label htmlFor="source">How did you hear about us?*</Label>
-          <Select>
-            <SelectTrigger className="h-12 rounded-xl">
+          <Select onValueChange={() => {}}>
+            <SelectTrigger id="source" className="h-12 rounded-xl">
               <SelectValue placeholder="Please Select" />
             </SelectTrigger>
             <SelectContent>
@@ -169,9 +169,15 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
         </div>
 
         <Button 
-          type="submit" 
+          type="submit"
           variant="hero" 
           className="w-full h-12 rounded-xl text-base mt-4"
+          onClick={(e) => {
+            e.preventDefault();
+            console.log("Form submitted with services:", selectedServices);
+            // TODO: Add actual form submission logic here
+            alert("Form submitted! Connect to a backend to handle submissions.");
+          }}
         >
           Book a Call
         </Button>
