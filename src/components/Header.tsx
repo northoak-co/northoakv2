@@ -57,12 +57,12 @@ const Header = () => {
         }}
         transition={{ duration: 0.3 }}
       >
-        {/* Logo - animates from center-left to far left edge */}
+        {/* Logo - animates from center-left to far left edge, clamped to screen */}
         <Link to="/" className="absolute left-6">
           <motion.div
             className="flex items-center"
             animate={{
-              x: isScrolled ? 0 : "calc(50vw - 50% - 580px)",
+              x: isScrolled ? 0 : "max(calc(50vw - 50% - 580px), 0px)",
             }}
             transition={{
               duration: 0.4,
@@ -154,14 +154,14 @@ const Header = () => {
           })}
         </nav>
 
-        {/* CTA Button - animates from center-right to far right edge */}
+        {/* CTA Button - animates from center-right to far right edge, clamped to screen */}
         <motion.div
           className="hidden lg:block absolute right-6"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{
             opacity: 1,
             scale: 1,
-            x: isScrolled ? 0 : "calc(-50vw + 50% + 580px)",
+            x: isScrolled ? 0 : "min(calc(-50vw + 50% + 580px), 0px)",
           }}
           transition={{
             duration: 0.4,
