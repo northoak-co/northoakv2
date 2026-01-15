@@ -213,7 +213,9 @@ const Careers = () => {
                   className="flex justify-center"
                 >
                   <a
-                    href="#open-positions"
+                    href="https://apply.workable.com/northoak/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group flex items-center bg-sage hover:bg-sage-dark transition-colors duration-200 rounded-full overflow-hidden"
                   >
                     <span className="px-6 py-3 text-white font-medium">
