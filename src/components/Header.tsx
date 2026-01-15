@@ -19,7 +19,6 @@ const Header = () => {
     { label: "Industries", href: "#industries", hasDropdown: true, isRoute: false },
     { label: "Why NorthOak?", href: "#about", hasDropdown: false, isRoute: false },
     { label: "Pricing", href: "#pricing", hasDropdown: false, isRoute: false },
-    { label: "Resources", href: "#resources", hasDropdown: true, isRoute: false },
     { label: "Careers", href: "/careers", hasDropdown: false, isRoute: true },
   ];
 
