@@ -88,7 +88,7 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
             <Label htmlFor="url">Company URL*</Label>
             <Input 
               id="url" 
-              type="url" 
+              type="text" 
               placeholder="yourcompany.com"
               className="h-12 rounded-xl"
             />
