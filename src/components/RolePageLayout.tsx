@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Partners from "./Partners";
+import CTASection from "./CTASection";
 
 interface RolePageLayoutProps {
   icon: LucideIcon;
@@ -240,35 +241,7 @@ const RolePageLayout = ({
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-3xl mx-auto text-center"
-            >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Ready to scale your {title.toLowerCase()} team?
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                Get started in as little as one week. Our team will match you
-                with the perfect professionals for your needs.
-              </p>
-              <Link to="/get-started">
-                <button className="group flex items-center mx-auto bg-sage hover:bg-sage-dark transition-colors duration-200 rounded-full overflow-hidden">
-                  <span className="px-6 py-3 text-white font-medium">
-                    Get Started Today
-                  </span>
-                  <span className="flex items-center justify-center w-10 h-10 m-1.5 bg-white rounded-full">
-                    <ArrowRight className="w-4 h-4 text-sage" />
-                  </span>
-                </button>
-              </Link>
-            </motion.div>
-          </div>
-        </section>
+        <CTASection />
 
         <Partners />
       </main>

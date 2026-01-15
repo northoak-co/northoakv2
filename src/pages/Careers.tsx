@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import { Link } from "react-router-dom";
 
 const jobOpenings = [
@@ -193,31 +194,7 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 md:px-10 bg-primary/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Don't See the Right Role?
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              We're always looking for talented individuals. Send us your resume and we'll keep 
-              you in mind for future opportunities.
-            </p>
-            <Link to="/get-started">
-              <Button variant="hero" size="lg" className="rounded-xl">
-                Get in Touch
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <CTASection />
 
       <Footer />
     </div>

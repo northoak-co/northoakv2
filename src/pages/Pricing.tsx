@@ -3,6 +3,7 @@ import { Check, Users, Briefcase, Shield, Clock, Headphones, Award, Building2, A
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 
 const pricingTiers = [
@@ -414,32 +415,7 @@ const Pricing = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 md:py-24">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center max-w-2xl mx-auto"
-            >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Ready to grow your team?
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                Book a 25-minute intro call to discuss your needs and find the perfect match.
-              </p>
-              <Button
-                asChild
-                size="lg"
-                className="h-14 px-8 rounded-xl bg-sage text-primary-foreground hover:bg-sage-dark"
-              >
-                <Link to="/get-started">Get Started Today</Link>
-              </Button>
-            </motion.div>
-          </div>
-        </section>
+        <CTASection />
       </main>
 
       <Footer />
