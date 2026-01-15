@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import GetStarted from "./pages/GetStarted";
 import Careers from "./pages/Careers";
+import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 
 // Role pages
@@ -29,6 +30,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/get-started" element={<GetStarted />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/careers" element={<Careers />} />
           
           {/* Role pages */}
