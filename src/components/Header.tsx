@@ -41,7 +41,7 @@ const Header = () => {
       className="fixed top-8 left-0 right-0 z-50 px-9 md:px-10"
     >
       <motion.div
-        className="mx-auto h-[4.5rem] flex items-center transition-all duration-300 relative"
+        className="mx-auto h-[4.5rem] flex items-center justify-between transition-all duration-300 px-4 md:px-6"
         style={{ borderStyle: "solid" }}
         animate={{
           backgroundColor: isScrolled ? "hsl(var(--card) / 0.98)" : "transparent",
@@ -52,22 +52,13 @@ const Header = () => {
           borderRadius: isScrolled ? "1rem" : "0",
           borderColor: isScrolled ? "hsl(var(--border) / 0.5)" : "transparent",
           borderWidth: isScrolled ? "1px" : "0px",
-          paddingLeft: "1.5rem",
-          paddingRight: "1.5rem",
         }}
         transition={{ duration: 0.3 }}
       >
-        {/* Logo - animates from center-left to far left edge */}
-        <Link to="/" className="absolute left-6">
+        {/* Logo - always at left edge */}
+        <Link to="/" className="flex-shrink-0">
           <motion.div
             className="flex items-center"
-            animate={{
-              x: isScrolled ? 0 : "calc(50vw - 50% - 580px)",
-            }}
-            transition={{
-              duration: 0.4,
-              ease: [0.25, 0.1, 0.25, 1],
-            }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -154,19 +145,12 @@ const Header = () => {
           })}
         </nav>
 
-        {/* CTA Button - animates from center-right to far right edge */}
+        {/* CTA Button - always at right edge */}
         <motion.div
-          className="hidden lg:block absolute right-6"
+          className="hidden lg:block flex-shrink-0"
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            x: isScrolled ? 0 : "calc(-50vw + 50% + 580px)",
-          }}
-          transition={{
-            duration: 0.4,
-            ease: [0.25, 0.1, 0.25, 1],
-          }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3 }}
         >
           <Link to="/get-started">
             <Button
@@ -181,7 +165,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <motion.button
-          className="lg:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors"
+          className="lg:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors flex-shrink-0"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           whileTap={{ scale: 0.95 }}
         >
