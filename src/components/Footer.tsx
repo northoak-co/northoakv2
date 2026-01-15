@@ -14,13 +14,6 @@ const Footer = () => {
     { name: "Finance & Accounting", link: "/roles/finance-accounting" },
   ];
 
-  const industries = [
-    { name: "Marketing Agencies", link: "#" },
-    { name: "eCommerce Brands", link: "#" },
-    { name: "B2B SaaS", link: "#" },
-    { name: "Consumer Tech", link: "#" },
-    { name: "AI Startups", link: "#" },
-  ];
 
   const company = [
     { name: "Why NorthOak?", link: "#" },
@@ -34,7 +27,7 @@ const Footer = () => {
     <footer className="relative z-10">
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-16 bg-background">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Logo & Contact Column */}
           <div className="lg:col-span-2">
             <motion.div
@@ -118,33 +111,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Industries Column */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Industries</h4>
-            <ul className="space-y-3">
-              {industries.map((industry) => (
-                <li key={industry.name}>
-                  <a 
-                    href={industry.link} 
-                    className="text-muted-foreground hover:text-sage transition-colors text-sm"
-                  >
-                    {industry.name}
-                  </a>
-                </li>
-              ))}
-              <li>
-                <a 
-                  href="#" 
-                  className="inline-flex items-center gap-2 text-foreground font-medium text-sm hover:text-sage transition-colors mt-2"
-                >
-                  View all
-                  <span className="w-6 h-6 rounded-full bg-sage-light flex items-center justify-center">
-                    <ArrowRight className="w-3 h-3 text-sage" />
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
 
           {/* Company Column */}
           <div>
