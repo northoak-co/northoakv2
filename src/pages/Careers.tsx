@@ -1,42 +1,16 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Briefcase, MapPin, Clock, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
-import { Link } from "react-router-dom";
+import { Card, CardContent } from "@/components/ui/card";
 
-const jobOpenings = [
-  {
-    title: "Senior Account Manager",
-    department: "Client Success",
-    location: "Remote",
-    type: "Full-time",
-    description: "Lead and grow relationships with our enterprise clients while ensuring exceptional service delivery.",
-  },
-  {
-    title: "Operations Specialist",
-    department: "Operations",
-    location: "Remote",
-    type: "Full-time",
-    description: "Optimize workflows and processes to ensure seamless service delivery for our clients.",
-  },
-  {
-    title: "Talent Acquisition Lead",
-    department: "People",
-    location: "Remote",
-    type: "Full-time",
-    description: "Source, attract, and hire top-tier virtual assistants to join our growing team.",
-  },
-  {
-    title: "Customer Success Manager",
-    department: "Client Success",
-    location: "Remote",
-    type: "Full-time",
-    description: "Ensure client satisfaction and retention through proactive engagement and support.",
-  },
-];
+declare global {
+  interface Window {
+    whr: any;
+    whr_embed: any;
+  }
+}
 
 const benefits = [
   {
@@ -58,6 +32,37 @@ const benefits = [
 ];
 
 const Careers = () => {
+  useEffect(() => {
+    // Load Workable embed script
+    const script = document.createElement("script");
+    script.src = "https://www.workable.com/assets/embed.js";
+    script.type = "text/javascript";
+    script.async = true;
+    script.onload = () => {
+      if (window.whr) {
+        window.whr(document).ready(() => {
+          window.whr_embed(719299, {
+            base: "jobs",
+            detail: "titles",
+            zoom: "country",
+            grouping: "none",
+          });
+        });
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector(
+        'script[src="https://www.workable.com/assets/embed.js"]'
+      );
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -127,7 +132,7 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Job Openings Section */}
+      {/* Job Openings Section - Workable Embed */}
       <section className="py-20 px-6 md:px-10">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -145,52 +150,8 @@ const Careers = () => {
             </p>
           </motion.div>
 
-          <div className="space-y-4">
-            {jobOpenings.map((job, index) => (
-              <motion.div
-                key={job.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="bg-card border-border/50 hover:shadow-lg hover:border-primary/30 transition-all cursor-pointer group">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Briefcase className="w-4 h-4 text-primary" />
-                          <span className="text-sm text-muted-foreground">{job.department}</span>
-                        </div>
-                        <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                          {job.title}
-                        </h3>
-                        <p className="text-muted-foreground text-sm mb-3">
-                          {job.description}
-                        </p>
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                          <span className="flex items-center gap-1">
-                            <MapPin className="w-4 h-4" />
-                            {job.location}
-                          </span>
-                          <span className="flex items-center gap-1">
-                            <Clock className="w-4 h-4" />
-                            {job.type}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="md:ml-4">
-                        <Button variant="outline" className="rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                          Apply Now
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+          {/* Workable Embed Hook */}
+          <div id="whr_embed_hook" className="min-h-[200px]"></div>
         </div>
       </section>
 
