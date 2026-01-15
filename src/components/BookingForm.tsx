@@ -126,12 +126,12 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
                 <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-[--radix-popover-trigger-width] p-2 bg-popover z-50" align="start">
+            <PopoverContent className="w-[--radix-popover-trigger-width] p-2 bg-card border border-border shadow-lg z-50" align="start">
               <div className="space-y-1">
                 {serviceOptions.map((service) => (
                   <div
                     key={service.value}
-                    className="flex items-center space-x-3 p-2 rounded-lg hover:bg-muted cursor-pointer"
+                    className="flex items-center space-x-3 p-2 rounded-lg hover:bg-accent cursor-pointer bg-card"
                     onClick={() => toggleService(service.value)}
                   >
                     <Checkbox
