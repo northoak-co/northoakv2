@@ -118,9 +118,9 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
               <Button
                 variant="outline"
                 role="combobox"
-                className="w-full h-12 rounded-xl justify-between font-normal bg-background hover:bg-background"
+                className="w-full h-12 rounded-xl justify-between font-normal bg-background hover:bg-muted/50 hover:text-foreground"
               >
-                <span className={selectedServices.length === 0 ? "text-muted-foreground" : ""}>
+                <span className={selectedServices.length === 0 ? "text-muted-foreground" : "text-foreground"}>
                   {getSelectedServicesLabel()}
                 </span>
                 <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
