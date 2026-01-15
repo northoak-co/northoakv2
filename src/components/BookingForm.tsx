@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Popover,
@@ -168,7 +169,16 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
           </Select>
         </div>
 
-        <Button 
+        <div className="space-y-2">
+          <Label htmlFor="notes">Additional Notes (Optional)</Label>
+          <Textarea
+            id="notes"
+            placeholder="Any additional details or requirements you'd like to share..."
+            className="min-h-[100px] rounded-xl resize-none"
+          />
+        </div>
+
+        <Button
           type="submit"
           variant="hero" 
           className="w-full h-12 rounded-xl text-base mt-4"
