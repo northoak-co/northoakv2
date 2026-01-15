@@ -1,16 +1,7 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CTASection from "@/components/CTASection";
 import { Card, CardContent } from "@/components/ui/card";
-
-declare global {
-  interface Window {
-    whr: any;
-    whr_embed: any;
-  }
-}
 
 const benefits = [
   {
@@ -32,37 +23,6 @@ const benefits = [
 ];
 
 const Careers = () => {
-  useEffect(() => {
-    // Load Workable embed script
-    const script = document.createElement("script");
-    script.src = "https://www.workable.com/assets/embed.js";
-    script.type = "text/javascript";
-    script.async = true;
-    script.onload = () => {
-      if (window.whr) {
-        window.whr(document).ready(() => {
-          window.whr_embed(719299, {
-            base: "jobs",
-            detail: "titles",
-            zoom: "country",
-            grouping: "none",
-          });
-        });
-      }
-    };
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector(
-        'script[src="https://www.workable.com/assets/embed.js"]'
-      );
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -131,31 +91,6 @@ const Careers = () => {
           </div>
         </div>
       </section>
-
-      {/* Job Openings Section - Workable Embed */}
-      <section className="py-20 px-6 md:px-10">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Open Positions
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Find your next opportunity and help us shape the future of virtual staffing.
-            </p>
-          </motion.div>
-
-          {/* Workable Embed Hook */}
-          <div id="whr_embed_hook" className="min-h-[200px]"></div>
-        </div>
-      </section>
-
-      <CTASection />
 
       <Footer />
     </div>
