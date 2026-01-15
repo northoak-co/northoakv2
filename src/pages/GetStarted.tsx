@@ -1,8 +1,14 @@
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { Check, Users, FileText, Lightbulb } from "lucide-react";
+import { Check, Users, FileText, Lightbulb, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -12,10 +18,36 @@ import {
 } from "@/components/ui/select";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+
+const serviceOptions = [
+  { value: "crm-management", label: "CRM Management" },
+  { value: "customer-support", label: "Customer Support" },
+  { value: "hr-admin", label: "HR Admin" },
+  { value: "virtual-assistant", label: "Virtual Assistant" },
+  { value: "finance-accounting", label: "Finance & Accounting" },
+  { value: "back-office-admin", label: "Back Office Admin" },
+];
 
 const GetStarted = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
+  const toggleService = (value: string) => {
+    setSelectedServices(prev =>
+      prev.includes(value)
+        ? prev.filter(v => v !== value)
+        : [...prev, value]
+    );
+  };
+
+  const getSelectedServicesLabel = () => {
+    if (selectedServices.length === 0) return "Please Select";
+    if (selectedServices.length === 1) {
+      return serviceOptions.find(s => s.value === selectedServices[0])?.label;
+    }
+    return `${selectedServices.length} services selected`;
+  };
 
   // Mouse position tracking
   const mouseX = useMotionValue(0);
@@ -278,20 +310,43 @@ const GetStarted = () => {
 
                           <div className="space-y-2">
                             <Label htmlFor="services">Services you're interested in*</Label>
-                            <Select>
-                              <SelectTrigger className="h-12 rounded-xl">
-                                <SelectValue placeholder="Please Select" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="crm-management">CRM Management</SelectItem>
-                                <SelectItem value="customer-support">Customer Support</SelectItem>
-                                <SelectItem value="hr-admin">HR Admin</SelectItem>
-                                <SelectItem value="virtual-assistant">Virtual Assistant</SelectItem>
-                                <SelectItem value="finance-accounting">Finance & Accounting</SelectItem>
-                                <SelectItem value="back-office-admin">Back Office Admin</SelectItem>
-                                <SelectItem value="multiple">Multiple Services</SelectItem>
-                              </SelectContent>
-                            </Select>
+                            <Popover>
+                              <PopoverTrigger asChild>
+                                <Button
+                                  variant="outline"
+                                  role="combobox"
+                                  className="w-full h-12 rounded-xl justify-between font-normal bg-background hover:bg-background"
+                                >
+                                  <span className={selectedServices.length === 0 ? "text-muted-foreground" : ""}>
+                                    {getSelectedServicesLabel()}
+                                  </span>
+                                  <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                </Button>
+                              </PopoverTrigger>
+                              <PopoverContent className="w-[--radix-popover-trigger-width] p-2 bg-popover z-50" align="start">
+                                <div className="space-y-1">
+                                  {serviceOptions.map((service) => (
+                                    <div
+                                      key={service.value}
+                                      className="flex items-center space-x-3 p-2 rounded-lg hover:bg-muted cursor-pointer"
+                                      onClick={() => toggleService(service.value)}
+                                    >
+                                      <Checkbox
+                                        id={service.value}
+                                        checked={selectedServices.includes(service.value)}
+                                        onCheckedChange={() => toggleService(service.value)}
+                                      />
+                                      <label
+                                        htmlFor={service.value}
+                                        className="text-sm font-medium leading-none cursor-pointer flex-1"
+                                      >
+                                        {service.label}
+                                      </label>
+                                    </div>
+                                  ))}
+                                </div>
+                              </PopoverContent>
+                            </Popover>
                           </div>
 
                           <div className="space-y-2">
