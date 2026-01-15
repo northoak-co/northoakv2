@@ -267,56 +267,91 @@ const Careers = () => {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-20 px-6 md:px-10 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-8 bg-background">
+        <div className="mx-auto px-3 md:px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="relative rounded-3xl md:rounded-[2.5rem] border border-sage/25 overflow-hidden"
+            style={{
+              background:
+                "linear-gradient(180deg, hsl(102 35% 92%) 0%, hsl(102 25% 94%) 40%, hsl(102 20% 95%) 100%)",
+              boxShadow:
+                "0 4px 40px -12px hsl(var(--sage) / 0.2), inset 0 1px 0 0 hsl(var(--sage) / 0.15)",
+            }}
           >
-            <span className="text-sage font-medium text-sm tracking-wide uppercase mb-4 block">
-              What Drives Us
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Our Core Values
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              In order of priority, these are the principles that guide every
-              decision we make.
-            </p>
-          </motion.div>
+            {/* Background orbs */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div
+                className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full blur-3xl"
+                style={{
+                  background:
+                    "radial-gradient(circle, hsl(102 44% 51% / 0.25) 0%, transparent 70%)",
+                }}
+              />
+              <div
+                className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full blur-3xl"
+                style={{
+                  background:
+                    "radial-gradient(circle, hsl(102 40% 55% / 0.2) 0%, transparent 70%)",
+                }}
+              />
+            </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {coreValues.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="h-full bg-card border-border/50 hover:shadow-lg transition-shadow relative overflow-hidden">
-                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-sage/10 flex items-center justify-center">
-                    <span className="text-sage font-bold text-sm">
-                      {value.priority}
-                    </span>
-                  </div>
-                  <CardContent className="p-6 pt-8">
-                    <div className="w-12 h-12 rounded-xl bg-sage/10 flex items-center justify-center mb-4">
-                      <value.icon className="w-6 h-6 text-sage" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
-                      {value.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {value.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+            <div className="relative z-10 py-16 md:py-20 px-6 md:px-12 lg:px-20">
+              <div className="max-w-6xl mx-auto">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-center mb-12"
+                >
+                  <span className="text-sage font-medium text-sm tracking-wide uppercase mb-4 block">
+                    What Drives Us
+                  </span>
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Our Core Values
+                  </h2>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    In order of priority, these are the principles that guide every
+                    decision we make.
+                  </p>
+                </motion.div>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                  {coreValues.map((value, index) => (
+                    <motion.div
+                      key={value.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <Card className="h-full bg-white/80 backdrop-blur-sm border-white/50 hover:shadow-lg transition-shadow relative overflow-hidden">
+                        <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-sage/10 flex items-center justify-center">
+                          <span className="text-sage font-bold text-sm">
+                            {value.priority}
+                          </span>
+                        </div>
+                        <CardContent className="p-6 pt-8">
+                          <div className="w-12 h-12 rounded-xl bg-sage/10 flex items-center justify-center mb-4">
+                            <value.icon className="w-6 h-6 text-sage" />
+                          </div>
+                          <h3 className="text-lg font-semibold text-foreground mb-2">
+                            {value.title}
+                          </h3>
+                          <p className="text-muted-foreground text-sm">
+                            {value.description}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -420,51 +455,86 @@ const Careers = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 px-6 md:px-10 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-8 bg-background">
+        <div className="mx-auto px-3 md:px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="relative rounded-3xl md:rounded-[2.5rem] border border-sage/25 overflow-hidden"
+            style={{
+              background:
+                "linear-gradient(180deg, hsl(102 35% 92%) 0%, hsl(102 25% 94%) 40%, hsl(102 20% 95%) 100%)",
+              boxShadow:
+                "0 4px 40px -12px hsl(var(--sage) / 0.2), inset 0 1px 0 0 hsl(var(--sage) / 0.15)",
+            }}
           >
-            <span className="text-sage font-medium text-sm tracking-wide uppercase mb-4 block">
-              Benefits & Perks
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What We Offer
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              We believe in treating our team like the professionals they are.
-              Here's what you can expect.
-            </p>
-          </motion.div>
+            {/* Background orbs */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div
+                className="absolute -top-24 -left-24 w-[400px] h-[400px] rounded-full blur-3xl"
+                style={{
+                  background:
+                    "radial-gradient(circle, hsl(102 44% 51% / 0.2) 0%, transparent 70%)",
+                }}
+              />
+              <div
+                className="absolute -bottom-24 -right-24 w-[450px] h-[450px] rounded-full blur-3xl"
+                style={{
+                  background:
+                    "radial-gradient(circle, hsl(102 40% 55% / 0.18) 0%, transparent 70%)",
+                }}
+              />
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-              >
-                <Card className="h-full bg-card border-border/50 hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-xl bg-sage/10 flex items-center justify-center mb-4">
-                      <benefit.icon className="w-6 h-6 text-sage" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {benefit.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+            <div className="relative z-10 py-16 md:py-20 px-6 md:px-12 lg:px-20">
+              <div className="max-w-6xl mx-auto">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-center mb-12"
+                >
+                  <span className="text-sage font-medium text-sm tracking-wide uppercase mb-4 block">
+                    Benefits & Perks
+                  </span>
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    What We Offer
+                  </h2>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    We believe in treating our team like the professionals they are.
+                    Here's what you can expect.
+                  </p>
+                </motion.div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {benefits.map((benefit, index) => (
+                    <motion.div
+                      key={benefit.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.08 }}
+                    >
+                      <Card className="h-full bg-white/80 backdrop-blur-sm border-white/50 hover:shadow-lg transition-shadow">
+                        <CardContent className="p-6">
+                          <div className="w-12 h-12 rounded-xl bg-sage/10 flex items-center justify-center mb-4">
+                            <benefit.icon className="w-6 h-6 text-sage" />
+                          </div>
+                          <h3 className="text-lg font-semibold text-foreground mb-2">
+                            {benefit.title}
+                          </h3>
+                          <p className="text-muted-foreground text-sm">
+                            {benefit.description}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -497,54 +567,82 @@ const Careers = () => {
       {/* Open Positions Section */}
       <section
         id="open-positions"
-        className="py-20 px-6 md:px-10 bg-muted/30 scroll-mt-24"
+        className="py-8 bg-background scroll-mt-24"
       >
-        <div className="max-w-4xl mx-auto">
+        <div className="mx-auto px-3 md:px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="relative rounded-3xl md:rounded-[2.5rem] border border-sage/25 overflow-hidden"
+            style={{
+              background:
+                "linear-gradient(180deg, hsl(102 35% 92%) 0%, hsl(102 25% 94%) 40%, hsl(102 20% 95%) 100%)",
+              boxShadow:
+                "0 4px 40px -12px hsl(var(--sage) / 0.2), inset 0 1px 0 0 hsl(var(--sage) / 0.15)",
+            }}
           >
-            <span className="text-sage font-medium text-sm tracking-wide uppercase mb-4 block">
-              Open Positions
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Ready to Join?
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              We're always looking for exceptional people who share our values.
-              Check out our current openings or reach out if you think you'd be
-              a great fit.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="bg-card border border-border/50 rounded-2xl p-8 text-center"
-          >
-            <div className="w-16 h-16 rounded-2xl bg-sage/10 flex items-center justify-center mx-auto mb-6">
-              <Users className="w-8 h-8 text-sage" />
+            {/* Background orbs */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl"
+                style={{
+                  background:
+                    "radial-gradient(circle, hsl(102 44% 51% / 0.15) 0%, transparent 70%)",
+                }}
+              />
             </div>
-            <h3 className="font-display text-xl font-bold text-foreground mb-3">
-              View Current Openings
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              Browse our open positions on Workable and find your next
-              opportunity with NorthOak.
-            </p>
-            <a
-              href="https://apply.workable.com/northoak/?lng=en"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-sage hover:bg-sage-dark transition-colors duration-200 rounded-full px-6 py-3 text-white font-medium"
-            >
-              View All Positions
-              <ArrowRight className="w-4 h-4" />
-            </a>
+
+            <div className="relative z-10 py-16 md:py-20 px-6 md:px-12 lg:px-20">
+              <div className="max-w-4xl mx-auto">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-center mb-12"
+                >
+                  <span className="text-sage font-medium text-sm tracking-wide uppercase mb-4 block">
+                    Open Positions
+                  </span>
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Ready to Join?
+                  </h2>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    We're always looking for exceptional people who share our values.
+                    Check out our current openings or reach out if you think you'd be
+                    a great fit.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-8 text-center"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-sage/10 flex items-center justify-center mx-auto mb-6">
+                    <Users className="w-8 h-8 text-sage" />
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-foreground mb-3">
+                    View Current Openings
+                  </h3>
+                  <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+                    Browse our open positions on Workable and find your next
+                    opportunity with NorthOak.
+                  </p>
+                  <a
+                    href="https://apply.workable.com/northoak/?lng=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-sage hover:bg-sage-dark transition-colors duration-200 rounded-full px-6 py-3 text-white font-medium"
+                  >
+                    View All Positions
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </motion.div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
