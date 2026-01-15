@@ -5,8 +5,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
+const roles = [
+  { name: "CRM Management", href: "/roles/crm-management" },
+  { name: "Customer Support", href: "/roles/customer-support" },
+  { name: "HR Admin", href: "/roles/hr-admin" },
+  { name: "Virtual Assistant", href: "/roles/virtual-assistant" },
+  { name: "Finance & Accounting", href: "/roles/finance-accounting" },
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isRolesOpen, setIsRolesOpen] = useState(false);
+  const [isMobileRolesOpen, setIsMobileRolesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
 
@@ -68,8 +78,56 @@ const Header = () => {
 
         {/* Desktop Navigation - stays centered */}
         <nav className="hidden lg:flex items-center gap-1 mx-auto">
-          {navLinks.map((link, index) =>
-            link.isRoute ? (
+          {navLinks.map((link, index) => {
+            if (link.label === "Roles") {
+              return (
+                <div
+                  key={link.label}
+                  className="relative"
+                  onMouseEnter={() => setIsRolesOpen(true)}
+                  onMouseLeave={() => setIsRolesOpen(false)}
+                >
+                  <motion.button
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + index * 0.05, duration: 0.3 }}
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center gap-1 px-4 py-2 text-foreground/80 hover:text-foreground transition-colors text-sm font-medium rounded-lg hover:bg-muted/50"
+                    onClick={() => setIsRolesOpen(!isRolesOpen)}
+                  >
+                    {link.label}
+                    <ChevronDown className={`w-4 h-4 opacity-60 transition-transform duration-200 ${isRolesOpen ? 'rotate-180' : ''}`} />
+                  </motion.button>
+
+                  <AnimatePresence>
+                    {isRolesOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-0 mt-2 w-56 bg-card border border-border/50 rounded-xl shadow-lg overflow-hidden z-50"
+                      >
+                        <div className="py-2">
+                          {roles.map((role) => (
+                            <Link
+                              key={role.name}
+                              to={role.href}
+                              className="block px-4 py-2.5 text-sm text-foreground/80 hover:text-foreground hover:bg-muted/50 transition-colors"
+                              onClick={() => setIsRolesOpen(false)}
+                            >
+                              {role.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            }
+
+            return link.isRoute ? (
               <Link key={link.label} to={link.href}>
                 <motion.span
                   initial={{ opacity: 0, y: -10 }}
@@ -92,10 +150,9 @@ const Header = () => {
                 className="flex items-center gap-1 px-4 py-2 text-foreground/80 hover:text-foreground transition-colors text-sm font-medium rounded-lg hover:bg-muted/50"
               >
                 {link.label}
-                {link.hasDropdown && <ChevronDown className="w-4 h-4 opacity-60" />}
               </motion.a>
-            )
-          )}
+            );
+          })}
         </nav>
 
         {/* CTA Button - animates from center-right to far right edge */}
@@ -166,8 +223,52 @@ const Header = () => {
             className="lg:hidden mt-2 max-w-7xl mx-auto bg-card/98 backdrop-blur-xl rounded-2xl border border-border/50 shadow-hover overflow-hidden"
           >
             <nav className="p-4 flex flex-col gap-1">
-              {navLinks.map((link, index) =>
-                link.isRoute ? (
+              {navLinks.map((link, index) => {
+                if (link.label === "Roles") {
+                  return (
+                    <div key={link.label}>
+                      <motion.button
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05, duration: 0.2 }}
+                        className="flex items-center justify-between w-full px-4 py-3 text-foreground/80 hover:text-foreground hover:bg-muted/50 transition-colors rounded-lg"
+                        onClick={() => setIsMobileRolesOpen(!isMobileRolesOpen)}
+                      >
+                        <span className="font-medium">{link.label}</span>
+                        <ChevronDown className={`w-4 h-4 opacity-60 transition-transform duration-200 ${isMobileRolesOpen ? 'rotate-180' : ''}`} />
+                      </motion.button>
+                      <AnimatePresence>
+                        {isMobileRolesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="pl-4 py-2 space-y-1">
+                              {roles.map((role) => (
+                                <Link
+                                  key={role.name}
+                                  to={role.href}
+                                  className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-muted/50 transition-colors rounded-lg"
+                                  onClick={() => {
+                                    setIsMenuOpen(false);
+                                    setIsMobileRolesOpen(false);
+                                  }}
+                                >
+                                  {role.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
+                return link.isRoute ? (
                   <Link key={link.label} to={link.href} onClick={() => setIsMenuOpen(false)}>
                     <motion.span
                       initial={{ opacity: 0, x: -20 }}
@@ -189,10 +290,9 @@ const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <span className="font-medium">{link.label}</span>
-                    {link.hasDropdown && <ChevronDown className="w-4 h-4 opacity-60" />}
                   </motion.a>
-                )
-              )}
+                );
+              })}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
