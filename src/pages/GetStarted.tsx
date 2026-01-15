@@ -277,6 +277,24 @@ const GetStarted = () => {
                           </div>
 
                           <div className="space-y-2">
+                            <Label htmlFor="services">Services you're interested in*</Label>
+                            <Select>
+                              <SelectTrigger className="h-12 rounded-xl">
+                                <SelectValue placeholder="Please Select" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="crm-management">CRM Management</SelectItem>
+                                <SelectItem value="customer-support">Customer Support</SelectItem>
+                                <SelectItem value="hr-admin">HR Admin</SelectItem>
+                                <SelectItem value="virtual-assistant">Virtual Assistant</SelectItem>
+                                <SelectItem value="finance-accounting">Finance & Accounting</SelectItem>
+                                <SelectItem value="back-office-admin">Back Office Admin</SelectItem>
+                                <SelectItem value="multiple">Multiple Services</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          </div>
+
+                          <div className="space-y-2">
                             <Label htmlFor="source">How did you hear about us?*</Label>
                             <Select>
                               <SelectTrigger className="h-12 rounded-xl">
@@ -298,7 +316,7 @@ const GetStarted = () => {
                             variant="hero" 
                             className="w-full h-12 rounded-xl text-base mt-4"
                           >
-                            Let's go!
+                            Book a Call
                           </Button>
                         </form>
                       </div>
