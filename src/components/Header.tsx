@@ -15,11 +15,12 @@ const Header = () => {
   });
 
   const navLinks = [
-    { label: "Roles", href: "#services", hasDropdown: true },
-    { label: "Industries", href: "#industries", hasDropdown: true },
-    { label: "Why NorthOak?", href: "#about", hasDropdown: false },
-    { label: "Pricing", href: "#pricing", hasDropdown: false },
-    { label: "Resources", href: "#resources", hasDropdown: true },
+    { label: "Roles", href: "#services", hasDropdown: true, isRoute: false },
+    { label: "Industries", href: "#industries", hasDropdown: true, isRoute: false },
+    { label: "Why NorthOak?", href: "#about", hasDropdown: false, isRoute: false },
+    { label: "Pricing", href: "#pricing", hasDropdown: false, isRoute: false },
+    { label: "Resources", href: "#resources", hasDropdown: true, isRoute: false },
+    { label: "Careers", href: "/careers", hasDropdown: false, isRoute: true },
   ];
 
   return (
@@ -69,20 +70,34 @@ const Header = () => {
 
         {/* Desktop Navigation - stays centered */}
         <nav className="hidden lg:flex items-center gap-1 mx-auto">
-          {navLinks.map((link, index) => (
-            <motion.a
-              key={link.label}
-              href={link.href}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + index * 0.05, duration: 0.3 }}
-              whileHover={{ scale: 1.02 }}
-              className="flex items-center gap-1 px-4 py-2 text-foreground/80 hover:text-foreground transition-colors text-sm font-medium rounded-lg hover:bg-muted/50"
-            >
-              {link.label}
-              {link.hasDropdown && <ChevronDown className="w-4 h-4 opacity-60" />}
-            </motion.a>
-          ))}
+          {navLinks.map((link, index) =>
+            link.isRoute ? (
+              <Link key={link.label} to={link.href}>
+                <motion.span
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + index * 0.05, duration: 0.3 }}
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center gap-1 px-4 py-2 text-foreground/80 hover:text-foreground transition-colors text-sm font-medium rounded-lg hover:bg-muted/50"
+                >
+                  {link.label}
+                </motion.span>
+              </Link>
+            ) : (
+              <motion.a
+                key={link.label}
+                href={link.href}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + index * 0.05, duration: 0.3 }}
+                whileHover={{ scale: 1.02 }}
+                className="flex items-center gap-1 px-4 py-2 text-foreground/80 hover:text-foreground transition-colors text-sm font-medium rounded-lg hover:bg-muted/50"
+              >
+                {link.label}
+                {link.hasDropdown && <ChevronDown className="w-4 h-4 opacity-60" />}
+              </motion.a>
+            )
+          )}
         </nav>
 
         {/* CTA Button - animates from center-right to far right edge */}
@@ -153,20 +168,33 @@ const Header = () => {
             className="lg:hidden mt-2 max-w-7xl mx-auto bg-card/98 backdrop-blur-xl rounded-2xl border border-border/50 shadow-hover overflow-hidden"
           >
             <nav className="p-4 flex flex-col gap-1">
-              {navLinks.map((link, index) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05, duration: 0.2 }}
-                  className="flex items-center justify-between px-4 py-3 text-foreground/80 hover:text-foreground hover:bg-muted/50 transition-colors rounded-lg"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <span className="font-medium">{link.label}</span>
-                  {link.hasDropdown && <ChevronDown className="w-4 h-4 opacity-60" />}
-                </motion.a>
-              ))}
+              {navLinks.map((link, index) =>
+                link.isRoute ? (
+                  <Link key={link.label} to={link.href} onClick={() => setIsMenuOpen(false)}>
+                    <motion.span
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05, duration: 0.2 }}
+                      className="flex items-center justify-between px-4 py-3 text-foreground/80 hover:text-foreground hover:bg-muted/50 transition-colors rounded-lg"
+                    >
+                      <span className="font-medium">{link.label}</span>
+                    </motion.span>
+                  </Link>
+                ) : (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05, duration: 0.2 }}
+                    className="flex items-center justify-between px-4 py-3 text-foreground/80 hover:text-foreground hover:bg-muted/50 transition-colors rounded-lg"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span className="font-medium">{link.label}</span>
+                    {link.hasDropdown && <ChevronDown className="w-4 h-4 opacity-60" />}
+                  </motion.a>
+                )
+              )}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}

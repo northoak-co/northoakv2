@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import GetStarted from "./pages/GetStarted";
+import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 
 // Role pages
@@ -28,6 +29,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/get-started" element={<GetStarted />} />
+          <Route path="/careers" element={<Careers />} />
           
           {/* Role pages */}
           <Route path="/roles/crm-management" element={<CRMManagement />} />
