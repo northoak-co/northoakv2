@@ -16,10 +16,8 @@ const Footer = () => {
 
 
   const company = [
-    { name: "Why NorthOak?", link: "#" },
-    { name: "Pricing", link: "#" },
-    { name: "Resource Hub", link: "#" },
-    { name: "FAQ", link: "#" },
+    { name: "Pricing", link: "/pricing" },
+    { name: "Careers", link: "/careers" },
   ];
 
 
@@ -100,12 +98,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {company.map((item) => (
                 <li key={item.name}>
-                  <a 
-                    href={item.link} 
+                  <Link 
+                    to={item.link} 
                     className="text-muted-foreground hover:text-sage transition-colors text-sm"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
