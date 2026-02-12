@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import GetStarted from "./pages/GetStarted";
 import Careers from "./pages/Careers";
 import Pricing from "./pages/Pricing";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 // Role pages
@@ -40,6 +42,10 @@ const App = () => (
           <Route path="/roles/virtual-assistant" element={<VirtualAssistant />} />
           <Route path="/roles/finance-accounting" element={<FinanceAccounting />} />
           <Route path="/roles/back-office-admin" element={<BackOfficeAdmin />} />
+          
+          {/* Legal pages */}
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
