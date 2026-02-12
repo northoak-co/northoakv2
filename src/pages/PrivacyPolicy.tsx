@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
           <div className="space-y-10 text-foreground/90 leading-relaxed">
             <div>
               <h2 className="text-2xl font-semibold text-foreground mb-4">1. Introduction</h2>
-              <p>NorthOak, LLC ("NorthOak," "we," "us," or "our") is committed to protecting the privacy of our clients, website visitors, and users. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at northoak.co or use our staffing services.</p>
+              <p>NorthOak ("we," "us," or "our") is committed to protecting the privacy of our clients, website visitors, and users. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at northoak.co or use our staffing services.</p>
             </div>
 
             <div>
@@ -116,7 +116,7 @@ const PrivacyPolicy = () => {
               <h2 className="text-2xl font-semibold text-foreground mb-4">12. Contact Us</h2>
               <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
               <p className="mt-2">
-                <strong>NorthOak, LLC</strong><br />
+                <strong>NorthOak</strong><br />
                 Email: <a href="mailto:info@northoak.com" className="text-sage hover:text-sage-dark underline transition-colors">info@northoak.com</a>
               </p>
             </div>

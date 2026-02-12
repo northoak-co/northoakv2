@@ -19,7 +19,7 @@ const TermsOfService = () => {
           <div className="space-y-10 text-foreground/90 leading-relaxed">
             <div>
               <h2 className="text-2xl font-semibold text-foreground mb-4">1. Agreement to Terms</h2>
-              <p>By accessing or using the services provided by NorthOak, LLC ("NorthOak," "we," "us," or "our"), including our website at northoak.co and any related services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+              <p>By accessing or using the services provided by NorthOak ("we," "us," or "our"), including our website at northoak.co and any related services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
             </div>
 
             <div>
@@ -54,7 +54,7 @@ const TermsOfService = () => {
 
             <div>
               <h2 className="text-2xl font-semibold text-foreground mb-4">7. Intellectual Property</h2>
-              <p>All content on our website, including text, graphics, logos, and software, is the property of NorthOak, LLC and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works from our content without our prior written consent.</p>
+              <p>All content on our website, including text, graphics, logos, and software, is the property of NorthOak and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works from our content without our prior written consent.</p>
             </div>
 
             <div>
@@ -91,7 +91,7 @@ const TermsOfService = () => {
               <h2 className="text-2xl font-semibold text-foreground mb-4">14. Contact Us</h2>
               <p>If you have any questions about these Terms of Service, please contact us at:</p>
               <p className="mt-2">
-                <strong>NorthOak, LLC</strong><br />
+                <strong>NorthOak</strong><br />
                 Email: <a href="mailto:info@northoak.com" className="text-sage hover:text-sage-dark underline transition-colors">info@northoak.com</a>
               </p>
             </div>
