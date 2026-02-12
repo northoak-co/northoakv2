@@ -122,18 +122,18 @@ const Footer = () => {
               {currentYear} NorthOak, LLC
             </p>
             <div className="flex items-center gap-8">
-              <a 
-                href="#" 
+              <Link 
+                to="/terms-of-service" 
                 className="text-sm text-foreground hover:text-sage transition-colors"
               >
                 Terms of Service
-              </a>
-              <a 
-                href="#" 
+              </Link>
+              <Link 
+                to="/privacy-policy" 
                 className="text-sm text-foreground hover:text-sage transition-colors"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>
