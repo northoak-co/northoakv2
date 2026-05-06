@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import {
   Popover,
   PopoverContent,
@@ -76,22 +75,31 @@ const BookingForm = ({ className = "" }: BookingFormProps) => {
     setIsSubmitting(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke("send-contact-form", {
-        body: {
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+
+      const response = await fetch(`${supabaseUrl}/functions/v1/send-contact-form`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${supabaseKey}`,
+          "apikey": supabaseKey,
+        },
+        body: JSON.stringify({
           email,
           company,
           url,
           size,
-          services: selectedServices.map(s => 
+          services: selectedServices.map(s =>
             serviceOptions.find(opt => opt.value === s)?.label || s
           ),
           source,
           notes,
-        },
+        }),
       });
 
-      if (error) {
-        throw error;
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
       }
 
       toast({
