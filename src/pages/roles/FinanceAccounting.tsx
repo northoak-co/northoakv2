@@ -1,5 +1,26 @@
 import { PiggyBank } from "lucide-react";
 import RolePageLayout from "@/components/RolePageLayout";
+import { pageMeta, serviceSchema, breadcrumbSchema } from "@/lib/seo";
+
+export const meta = () => [
+  ...pageMeta({
+    title: "Hire a Bookkeeper or Finance Specialist | NorthOak",
+    description:
+      "Vetted bookkeepers and finance specialists for QuickBooks, Xero, and NetSuite — bookkeeping, AP/AR, financial reporting, and expense management.",
+    path: "/roles/finance-accounting",
+  }),
+  serviceSchema({
+    name: "Finance & Accounting",
+    description:
+      "Dedicated finance and accounting specialists for bookkeeping, accounts payable, accounts receivable, financial reporting, expense management, and tax prep support.",
+    path: "/roles/finance-accounting",
+    serviceType: "Bookkeeping and Accounting",
+  }),
+  breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Finance & Accounting", path: "/roles/finance-accounting" },
+  ]),
+];
 
 const FinanceAccounting = () => {
   return (

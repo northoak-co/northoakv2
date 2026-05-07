@@ -1,5 +1,26 @@
 import { Cog } from "lucide-react";
 import RolePageLayout from "@/components/RolePageLayout";
+import { pageMeta, serviceSchema, breadcrumbSchema } from "@/lib/seo";
+
+export const meta = () => [
+  ...pageMeta({
+    title: "Hire a Virtual Assistant | NorthOak",
+    description:
+      "Dedicated virtual assistants for calendar management, inbox triage, travel booking, research, and task coordination. Reclaim 15+ hours per week.",
+    path: "/roles/virtual-assistant",
+  }),
+  serviceSchema({
+    name: "Virtual Assistant",
+    description:
+      "Dedicated virtual assistants for executive and administrative support — calendar, email, travel, research, task coordination, and personal admin.",
+    path: "/roles/virtual-assistant",
+    serviceType: "Virtual Assistant",
+  }),
+  breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Virtual Assistant", path: "/roles/virtual-assistant" },
+  ]),
+];
 
 const VirtualAssistant = () => {
   return (

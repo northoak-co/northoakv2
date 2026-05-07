@@ -1,5 +1,26 @@
 import { HeadphonesIcon } from "lucide-react";
 import RolePageLayout from "@/components/RolePageLayout";
+import { pageMeta, serviceSchema, breadcrumbSchema } from "@/lib/seo";
+
+export const meta = () => [
+  ...pageMeta({
+    title: "Hire a Customer Support Specialist | NorthOak",
+    description:
+      "Trained customer support specialists who handle email, chat, and phone tickets in Zendesk, Gorgias, Intercom, and Help Scout — 24/7 coverage at a fraction of domestic cost.",
+    path: "/roles/customer-support",
+  }),
+  serviceSchema({
+    name: "Customer Support",
+    description:
+      "Dedicated customer support specialists handling email, live chat, phone, ticket management, and knowledge base maintenance.",
+    path: "/roles/customer-support",
+    serviceType: "Customer Support",
+  }),
+  breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Customer Support", path: "/roles/customer-support" },
+  ]),
+];
 
 const CustomerSupport = () => {
   return (

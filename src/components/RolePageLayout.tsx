@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Check, LucideIcon } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import Header from "./Header";
 import Footer from "./Footer";
 import Partners from "./Partners";

@@ -1,11 +1,20 @@
 import { motion } from "framer-motion";
 import { Check, Users, Briefcase, Shield, Clock, Headphones, Award, ArrowRight, DollarSign, Lightbulb, UserCheck, Info } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import ClientLogosCarousel from "@/components/ClientLogosCarousel";
+import { pageMeta } from "@/lib/seo";
+
+export const meta = () =>
+  pageMeta({
+    title: "Pricing | NorthOak",
+    description:
+      "Transparent pricing for vetted operations specialists. Ad-hoc support from $20/hour, full-time placements, and dedicated team plans — no minimums, no hidden fees.",
+    path: "/pricing",
+  });
 
 const pricingTiers = [
   {

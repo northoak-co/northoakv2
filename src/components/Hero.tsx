@@ -1,7 +1,7 @@
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 // Import character images
 import crmManagementImg from "@/assets/characters/crm-management.png";
