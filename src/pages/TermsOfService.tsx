@@ -1,5 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { pageMeta } from "@/lib/seo";
+
+export const meta = () =>
+  pageMeta({
+    title: "Terms of Service | NorthOak",
+    description: "NorthOak's terms of service governing the use of our website and operations outsourcing services.",
+    path: "/terms-of-service",
+  });
 
 const TermsOfService = () => {
   const currentYear = new Date().getFullYear();

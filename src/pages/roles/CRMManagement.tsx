@@ -1,5 +1,26 @@
 import { Users } from "lucide-react";
 import RolePageLayout from "@/components/RolePageLayout";
+import { pageMeta, serviceSchema, breadcrumbSchema } from "@/lib/seo";
+
+export const meta = () => [
+  ...pageMeta({
+    title: "Hire a CRM Specialist | NorthOak",
+    description:
+      "Vetted CRM administrators who maintain your customer data, route leads, manage pipeline, and automate workflows in HubSpot, Salesforce, Pipedrive, and more.",
+    path: "/roles/crm-management",
+  }),
+  serviceSchema({
+    name: "CRM Management",
+    description:
+      "Dedicated CRM specialists for data entry, lead management, pipeline hygiene, reporting, and workflow automation.",
+    path: "/roles/crm-management",
+    serviceType: "CRM Administration",
+  }),
+  breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "CRM Management", path: "/roles/crm-management" },
+  ]),
+];
 
 const CRMManagement = () => {
   return (

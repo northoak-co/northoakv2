@@ -4,6 +4,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookingForm from "@/components/BookingForm";
 import { useRef } from "react";
+import { pageMeta } from "@/lib/seo";
+
+export const meta = () =>
+  pageMeta({
+    title: "Get Started | NorthOak",
+    description:
+      "Book a free discovery call with NorthOak. Tell us about the operations work you want to offload and we'll match you with vetted specialists in days.",
+    path: "/get-started",
+  });
 
 const GetStarted = () => {
   const containerRef = useRef<HTMLDivElement>(null);

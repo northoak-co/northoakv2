@@ -2,7 +2,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const About = () => {
   const containerRef = useRef<HTMLDivElement>(null);

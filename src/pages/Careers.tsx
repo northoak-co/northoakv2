@@ -22,6 +22,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import ClientLogosCarousel from "@/components/ClientLogosCarousel";
+import { pageMeta } from "@/lib/seo";
+
+export const meta = () =>
+  pageMeta({
+    title: "Careers | NorthOak",
+    description:
+      "Join NorthOak as an operations specialist. Remote-friendly roles in customer support, finance, CRM administration, HR, virtual assistance, and back-office operations.",
+    path: "/careers",
+  });
 
 const coreValues = [
   {

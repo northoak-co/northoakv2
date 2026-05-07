@@ -1,5 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { pageMeta } from "@/lib/seo";
+
+export const meta = () =>
+  pageMeta({
+    title: "Privacy Policy | NorthOak",
+    description: "How NorthOak collects, uses, and protects information about visitors to our website and clients of our operations outsourcing services.",
+    path: "/privacy-policy",
+  });
 
 const PrivacyPolicy = () => {
   const currentYear = new Date().getFullYear();

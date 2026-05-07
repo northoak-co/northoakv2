@@ -1,5 +1,26 @@
 import { ClipboardList } from "lucide-react";
 import RolePageLayout from "@/components/RolePageLayout";
+import { pageMeta, serviceSchema, breadcrumbSchema } from "@/lib/seo";
+
+export const meta = () => [
+  ...pageMeta({
+    title: "Hire an HR Admin | NorthOak",
+    description:
+      "Expert HR admins for payroll processing, recruitment support, onboarding, benefits administration, and HR documentation. Reduce HR overhead by 80%.",
+    path: "/roles/hr-admin",
+  }),
+  serviceSchema({
+    name: "HR Administration",
+    description:
+      "Dedicated HR admins handling payroll, recruitment, onboarding, benefits administration, time and attendance, and HR documentation.",
+    path: "/roles/hr-admin",
+    serviceType: "Human Resources Administration",
+  }),
+  breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "HR Admin", path: "/roles/hr-admin" },
+  ]),
+];
 
 const HRAdmin = () => {
   return (

@@ -1,5 +1,26 @@
 import { FileText } from "lucide-react";
 import RolePageLayout from "@/components/RolePageLayout";
+import { pageMeta, serviceSchema, breadcrumbSchema } from "@/lib/seo";
+
+export const meta = () => [
+  ...pageMeta({
+    title: "Hire a Back-Office Admin | NorthOak",
+    description:
+      "Back-office specialists for data entry, document management, order processing, inventory, QA, and any custom workflow your business runs.",
+    path: "/roles/back-office-admin",
+  }),
+  serviceSchema({
+    name: "Back Office Admin",
+    description:
+      "Dedicated back-office specialists for data entry, document management, order processing, inventory, quality assurance, and custom workflow handling.",
+    path: "/roles/back-office-admin",
+    serviceType: "Back Office Administration",
+  }),
+  breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Back Office Admin", path: "/roles/back-office-admin" },
+  ]),
+];
 
 const BackOfficeAdmin = () => {
   return (

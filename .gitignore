@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# React Router framework mode
+.react-router
+build
+
 # Environment variables
 .env
 .env.local

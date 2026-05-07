@@ -2,7 +2,7 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import logo from "@/assets/logo.png";
 
 const roles = [
