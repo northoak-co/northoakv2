@@ -16,14 +16,15 @@ Working document. Check off items as they ship. Drafted 2026-05-07 after benchma
 
 ## Competitive parity framework
 
-Benchmark drafted 2026-05-07 after auditing four direct competitors: getmagic.com, supportninja.com, growthassistant.com, athena.com. The framework defines what NorthOak must have to be *credible* in this category (table stakes) and where to invest to *stand out* (differentiator picks). Every item below is tracked against an existing P0/P1/P2 task or flagged as a new addition.
+Benchmark drafted 2026-05-07 after auditing five direct competitors: getmagic.com, supportninja.com, growthassistant.com, athena.com, hugoinc.com. The framework defines what NorthOak must have to be *credible* in this category (table stakes) and where to invest to *stand out* (differentiator picks). Every item below is tracked against an existing P0/P1/P2 task or flagged as a new addition.
 
 ### What each competitor is best at (one line)
 
 - **Magic** — scale + breadth (40+ pages, 13+ industry verticals) and an AI-augmentation story (Magic AI). Hero is generic; pricing is hidden.
-- **SupportNinja** — risk-conscious / regulated buyers. Strongest compliance posture of the four (SOC 2 Type 2, PCI-DSS 4, HIPAA, GDPR), CEO video, named "Privacy-First" pillar.
-- **GrowthAssistant** — *the most copy-pasteable conversion stack of the four.* Published price ($3,500/mo, month-to-month), free replacements anytime, named talent profile cards with achievements, buyer-matched CMO/CRO testimonials, founder-led origin story (Jesse Pujji / Ampush). If we're going to study one site line-by-line, it's this one.
-- **Athena** — emotional/benefit-led brand for founders and execs. $3,000/mo published. Cinematic narrative testimonials. Compliance posture is weakest of the four despite the Stripe/Goldman/Sequoia logos.
+- **SupportNinja** — risk-conscious / regulated buyers. Strongest compliance posture of the five (SOC 2 Type 2, PCI-DSS 4, HIPAA, GDPR), CEO video, named "Privacy-First" pillar.
+- **GrowthAssistant** — *the most copy-pasteable conversion stack of the five.* Published price ($3,500/mo, month-to-month), free replacements anytime, named talent profile cards with achievements, buyer-matched CMO/CRO testimonials, founder-led origin story (Jesse Pujji / Ampush). If we're going to study one site line-by-line, it's this one.
+- **Athena** — emotional/benefit-led brand for founders and execs. $3,000/mo published. Cinematic narrative testimonials. Compliance posture is weakest of the five despite the Stripe/Goldman/Sequoia logos.
+- **Hugo (hugoinc.com)** — *vertical specialization done right.* Hero: *"Outsourcing+ Built to make you better."* Names "world-class teams" instead of "VAs." Logos: Google, Meta, Faire, Upwork, Outschool, Aurora, Attentive, Topicals. Seven industry pages (Gaming, Crypto, E-commerce, Health & Wellness, SaaS, Fintech, Edtech) — comparable to GA's depth but pointed at non-marketing buyers. Treats Trust & Safety and Data/AI labelling as co-equal service lines, not add-ons. ISO 27001 + MBE + Clutch 100. Weakness: zero founder visibility, no published pricing, no comparison pages, no calculator — same gaps as Magic.
 
 ### Table stakes — what every credible competitor has
 
@@ -47,21 +48,22 @@ NorthOak must check every box below to be considered seriously. Status reflects 
 Pick **two or three**, not all. Spreading thin matches the bar; depth wins.
 
 1. **Pricing transparency that beats Magic + SupportNinja, equals GrowthAssistant.** Publish a real monthly price + free-replacement guarantee on `/pricing`. Magic ($0 until you hire) and SupportNinja (3 named tiers, no dollars) are vague; GA and Athena look the most confident specifically because they publish. Tracked in Decisions section.
-2. **One substantive trust artifact done well.** SupportNinja owns compliance, GA owns founder-origin, Magic owns AI. NorthOak should pick *one* and lead with it:
-   - **Compliance** (SOC 2 Type II current or in-progress) — biggest commercial wedge for selling to regulated mid-market. Highest lift, highest payoff. Tracked in P1 #13 + Decisions.
-   - **Founder origin story** — GA's Jesse Pujji / Ampush angle is the single most efficient trust move on any of the four sites. Cheap; just needs founder time. Tracked in P1 #12.
-3. **Named structural concept.** Every competitor has one (Magic's "Magic Match" + "Magic 24/7", SupportNinja's "MaaS / TaaS", GA's "First-Match Rate", Athena's "compounding partnership"). It gives sales something to point at and reporters something to cite. NorthOak does not have one yet — **added to P2 below**.
+2. **One substantive trust artifact done well.** SupportNinja owns compliance, GA owns founder-origin, Magic owns AI, Hugo owns vertical depth. NorthOak should pick *one* and lead with it:
+   - **Compliance** (SOC 2 Type II current or in-progress) — biggest commercial wedge for selling to regulated mid-market. SupportNinja's the bar (SOC 2 Type 2 + PCI-DSS 4 + HIPAA + GDPR); Hugo carries ISO 27001 + MBE as a lighter-weight version. Highest lift, highest payoff. Tracked in P1 #13 + Decisions.
+   - **Founder origin story** — GA's Jesse Pujji / Ampush angle is the single most efficient trust move across the five sites. Hugo's omission of any founder face is the cleanest counter-example. Cheap; just needs founder time. Tracked in P1 #12.
+3. **Named structural concept.** Every competitor has one (Magic's "Magic Match" + "Magic 24/7", SupportNinja's "MaaS / TaaS", GA's "First-Match Rate", Athena's "compounding partnership", Hugo's "Outsourcing+"). It gives sales something to point at and reporters something to cite. NorthOak does not have one yet — **added to P2 below**.
 4. **Named AI-augmentation story.** Every competitor has one (Magic AI, NinjaAI, GAI). Becoming table-stakes-adjacent — needs a named version within 6 months, even if the underlying capability is light. **Added to P2 below.**
 
 ### What to deliberately skip (category over-investments)
 
-- **13+ industry vertical pages (Magic-style).** NorthOak ships 2 in P2, only paired with case studies. Programmatic grids without authority are penalized.
+- **13+ industry vertical pages (Magic-style).** NorthOak ships 2 in P2, only paired with case studies. Programmatic grids without authority are penalized. *(Hugo's 7 verticals are the realistic mid-state — useful reference if/when we expand past 2.)*
 - **Refer-a-friend incentive program (Magic).** Low-ROI mechanic for B2B services with long sales cycles.
 - **Email-gated lead magnets early (SupportNinja's 2026 CX Outsourcing Report).** Build trust through ungated case studies first; gating belongs to companies with brand authority to trade for the email.
 
-### Honest scoring of NorthOak today vs the four
+### Honest scoring of NorthOak today vs the five
 
 - **Stronger than Athena on:** logo wall caliber (NorthOak's 20 logos compete with Athena's), role-page breadth.
+- **At parity with Hugo on:** logo caliber (both name Google/Meta-tier brands) and role-page breadth — but Hugo wins on industry depth (7 verticals vs our 0) and weak compliance posture (ISO 27001).
 - **Stronger than nobody on:** trust artifacts, conversion clarity, founder visibility, content depth.
 - **Closing the gap is mostly already in the plan.** P1 (testimonials, comparison pages, /about, /security, calculator) plus P2 (case studies + verticals) gets us to credible parity. The two new items below are the only structural gaps the framework surfaced.
 
@@ -273,3 +275,4 @@ Brand mentions correlate with AI citation at r=0.664 — strongest single factor
 - [Magic (getmagic.com)](https://getmagic.com/) — AI-augmentation story, 13+ industry pages, "$0 until you hire" offer
 - [SupportNinja](https://www.supportninja.com/) — strongest compliance posture (SOC 2 Type 2, PCI-DSS 4, HIPAA, GDPR), CEO video, "Privacy-First" pillar
 - [GrowthAssistant](https://growthassistant.com/) — most copy-pasteable conversion stack (published $3,500/mo, free replacements, named talent cards, founder-led origin)
+- [Hugo (hugoinc.com)](https://hugoinc.com/) — vertical specialization done right; Google/Meta/Faire/Upwork logo caliber; "Outsourcing+" named methodology; ISO 27001 + MBE; treats Trust & Safety + Data/AI as co-equal service lines
